@@ -1,0 +1,12 @@
+@import '../../../assets/colors.scss';
+.flex {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15%;
+  &_item {
+    color: $yellow;
+  }
+  &_item:hover {
+    text-shadow: 1px 1px 3px #f58709;
+  }
+}

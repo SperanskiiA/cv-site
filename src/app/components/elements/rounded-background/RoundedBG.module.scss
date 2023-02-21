@@ -5,11 +5,11 @@
   height: auto;
   position: relative;
   aspect-ratio: 1/1;
-  margin: 40px;
+  margin: 40px auto;
   min-width: 333px;
   border-radius: 100%;
   @media (max-width: '600px') {
-    width: 80%;
+    width: 60%;
     margin: 40px auto;
   }
   @media (max-width: '450px') {
