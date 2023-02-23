@@ -21,7 +21,7 @@ export const Title = () => {
         </Typography>
         <Typography className={styles.text} variant="body1" fontSize="16px">
           I'm web developer with about 1.5 years of expirience. And I really
-          like that I do
+          like that I do!
         </Typography>
       </div>
     </motion.div>

@@ -16,6 +16,7 @@ export const Header = () => {
           <motion.div className={styles.flex}>
             {links.map((item) => (
               <motion.a
+                key={item}
                 className={styles.flex_item}
                 whileHover={{ scale: 1.2 }}
               >

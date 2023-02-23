@@ -4,11 +4,19 @@ import { motion } from 'framer-motion';
 import styles from './RoundedBG.module.scss';
 import { Container } from '../container/Container';
 import { useMediaQuery } from '@mui/material';
+import { TitleProps } from '../../../data';
+import React from 'react';
+import { gradient, yellow, orange } from '../../../assets/colors';
 
-export const Rounded = () => {
+type Props = {
+  data?: TitleProps[];
+  color1?: string;
+  color2?: string;
+  zIndex?: number;
+};
+export const Rounded = ({ data, color1, color2, zIndex }: Props) => {
   const [ref, width] = useElementWidth();
   const isMobile = useMediaQuery('(max-width: 600px)');
-  const arr = [1, 2, 3, 4, 5, 'null'];
 
   let roundedVariants = {};
   if (!isMobile) {
@@ -18,11 +26,33 @@ export const Rounded = () => {
       },
     };
   }
+  //style
+  const background =
+    color1 && color2 ? gradient(color1, color2) : gradient(yellow, orange);
+  const filter =
+    color1 && color2
+      ? `drop-shadow(0px 0px 60px ${color1})`
+      : `drop-shadow(0px 0px 60px ${yellow})`;
+  const iconFilter =
+    color1 && color2
+      ? `drop-shadow(1px 1px 1px ${color2})`
+      : `drop-shadow(1px 1px 1px ${orange})`;
+  const iconColor = color1 && color2 ? color1 : yellow;
 
   return (
-    <motion.div ref={ref} className={styles.wrap} whileHover={{ scale: 1.1 }}>
+    <motion.div
+      style={{ zIndex: zIndex || 1 }}
+      ref={ref}
+      className={styles.wrap}
+      whileHover={{ scale: 1.1 }}
+    >
       <motion.div
         className={styles.box}
+        style={{
+          background: background,
+          filter: filter,
+          zIndex: zIndex || 1,
+        }}
         initial={{}}
         animate={'rotate'}
         transition={{
@@ -32,30 +62,34 @@ export const Rounded = () => {
         }}
         variants={roundedVariants}
       >
-        {arr.map((item, i, arr) => {
-          const rotate = (360 / arr.length) * i;
+        {data &&
+          data.map((item, i, arr) => {
+            const rotate = (360 / arr.length) * i;
 
-          return (
-            <div
-              className={styles.box_item}
-              key={item}
-              style={{
-                transform: `rotate(${rotate}deg) translate(${width / 2}px)`,
-              }}
-            >
+            return (
               <div
-                className={styles.box_item_inner}
+                className={styles.box_item}
+                key={`roundIcon${i}`}
                 style={{
-                  transform: `rotate(${(360 / -arr.length) * i}deg) `,
+                  transform: `rotate(${rotate}deg) translate(${width / 2}px)`,
                 }}
               >
-                <div> {item}</div>
+                <div
+                  className={styles.box_item_inner}
+                  style={{
+                    transform: `rotate(${(360 / -arr.length) * i}deg) `,
+                  }}
+                >
+                  <item.icon
+                    style={{ color: iconColor, filter: iconFilter }}
+                    className={styles.box_item_inner_icon}
+                  />
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </motion.div>
-      <div className={styles.content}>
+      <div style={{ zIndex: zIndex || 1 }} className={styles.content}>
         <div>hello world</div>
       </div>
     </motion.div>
