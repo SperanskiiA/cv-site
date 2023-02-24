@@ -11,7 +11,7 @@ export const Home = () => {
 
   return (
     <Container bg="#2d2d2d">
-      <div style={{ padding: '40px 0' }}>
+      <div style={{ padding: '40px 0', width: '90%', margin: '0 auto' }}>
         <Grid
           container
           spacing={2}
@@ -22,7 +22,7 @@ export const Home = () => {
             <Title />
           </Grid>
           <Grid item sm={6} sx={{ paddingLeft: 0 }}>
-            <Rounded data={titleData} />
+            <Rounded data={titleData} animate={true} />
           </Grid>
         </Grid>
       </div>

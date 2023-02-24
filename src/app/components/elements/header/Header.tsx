@@ -8,24 +8,26 @@ export const Header = () => {
   const links = ['home', 'works', 'contacts'];
   return (
     <Container>
-      <Grid container spacing={2} direction="row">
-        <Grid item xs={4}>
-          <div style={{ fontWeight: 800, color: '#e1ff00' }}>ICON</div>
+      <div style={{ padding: '0 10px' }}>
+        <Grid container spacing={2} direction="row">
+          <Grid item xs={4}>
+            <div style={{ fontWeight: 800, color: '#e1ff00' }}>ICON</div>
+          </Grid>
+          <Grid item xs={8}>
+            <motion.div className={styles.flex}>
+              {links.map((item) => (
+                <motion.a
+                  key={item}
+                  className={styles.flex_item}
+                  whileHover={{ scale: 1.2 }}
+                >
+                  {item}
+                </motion.a>
+              ))}
+            </motion.div>
+          </Grid>
         </Grid>
-        <Grid item xs={8}>
-          <motion.div className={styles.flex}>
-            {links.map((item) => (
-              <motion.a
-                key={item}
-                className={styles.flex_item}
-                whileHover={{ scale: 1.2 }}
-              >
-                {item}
-              </motion.a>
-            ))}
-          </motion.div>
-        </Grid>
-      </Grid>
+      </div>
     </Container>
   );
 };

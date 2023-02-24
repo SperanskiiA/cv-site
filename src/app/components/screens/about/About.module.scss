@@ -1,0 +1,52 @@
+@import '../../../assets/colors.scss';
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 80%;
+  margin: 40px auto;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+  &_content {
+    color: $yellow;
+    text-shadow: 1px 1px 3px $orange;
+    z-index: 1;
+    grid-column: span 4/7;
+    grid-row: span 6/8;
+    background-color: $grey;
+    padding: 20px;
+    border-radius: 8px;
+
+    @media (max-width: 600px) {
+      grid-column: span 6/8;
+      grid-row: span 6/8;
+    }
+  }
+}
+.blue {
+  grid-column: span 4/6;
+
+  grid-row: span 4/7;
+  z-index: 0;
+  @media (max-width: '600px') {
+    grid-column: span 6/6;
+  }
+}
+.red {
+  z-index: 0;
+
+  grid-column: span 4/8;
+  grid-row: span 3/4;
+  @media (max-width: '600px') {
+    grid-column: span 4/9;
+  }
+}
+.yellow {
+  grid-column: span 3/8;
+  grid-row: span 3/8;
+  z-index: 0;
+  @media (max-width: '600px') {
+    grid-column: span 3/9;
+  }
+}

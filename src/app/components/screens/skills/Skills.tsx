@@ -8,7 +8,7 @@ import { cardData } from '../../../data';
 export const Skills = () => {
   return (
     <Container bg="#414141">
-      <div style={{ width: '80%', margin: '24px auto' }}>
+      <div style={{ width: '80%', margin: '40px auto' }}>
         <Grid container>
           <>
             {cardData.map((item) => (

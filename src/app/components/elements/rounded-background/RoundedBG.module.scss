@@ -5,16 +5,15 @@
   height: auto;
   position: relative;
   aspect-ratio: 1/1;
-  margin: 40px auto;
-  min-width: 333px;
+  margin: 0 auto;
+
   border-radius: 100%;
   z-index: 1;
   @media (max-width: '600px') {
     width: 60%;
-    margin: 40px auto;
+    margin: 0 auto;
   }
   @media (max-width: '450px') {
-    min-width: 250px;
   }
 }
 .content {
@@ -36,7 +35,6 @@
 }
 
 .box {
-  min-width: 333px;
   width: 100%;
   height: auto;
   aspect-ratio: 1/1;
@@ -47,9 +45,9 @@
   left: 0;
   z-index: 1;
 
-  @media (max-width: '450px') {
-    min-width: 250px;
-  }
+  // @media (max-width: '450px') {
+  //   min-width: 250px;
+  // }
 
   &_item {
     min-width: 40px;
@@ -65,7 +63,7 @@
     vertical-align: center;
     filter: drop-shadow(1px 3px 5px $dark-grey);
     @media (max-width: 450px) {
-      min-width: 30px;
+      min-width: 35px;
     }
 
     &_inner {

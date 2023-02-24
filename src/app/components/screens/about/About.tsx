@@ -1,53 +1,51 @@
 import { Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 
 import React from 'react';
 import {
   blue,
   darkGrey,
+  gradient,
   grey,
   lightBlue,
+  orange,
   pink,
+  red,
   yellow,
 } from '../../../assets/colors';
 import { Container } from '../../elements/container/Container';
 import { Rounded } from '../../elements/rounded-background/RoundedBG';
+import styles from './About.module.scss';
 
 export const About = () => {
   return (
     <Container bg={darkGrey}>
-      <div
-        style={{
-          width: '80%',
-          margin: '40px auto',
-          position: 'relative',
-          minHeight: '600px',
-          zIndex: 400,
-          background: yellow,
-          boxSizing: 'border-box',
-        }}
-      >
-        <div
-          style={{
-            zIndex: 20,
-            background: pink,
-            height: '600px',
-            width: '100%',
+      <div className={styles.grid}>
+        <motion.div
+          initial={{
+            boxShadow: '-2px 3px 12px 0px rgba(0, 0, 0, 0.7)',
           }}
+          whileHover={{
+            boxShadow: `-2px 3px 12px 0px ${orange}`,
+            scale: 1.05,
+          }}
+          className={styles.grid_content}
         >
           <Typography>Hi there! Here will be some info about me!</Typography>
+        </motion.div>
+        <div className={styles.blue}>
+          <Rounded
+            color1={blue}
+            color2={lightBlue}
+            size="100%"
+            animate={false}
+          />
         </div>
-        <div
-          style={{
-            position: 'absolute',
-            left: '-17%',
-            top: '-17%',
-            zIndex: -2,
-
-            height: '200px',
-            width: '200px',
-          }}
-        >
-          <Rounded color1={blue} color2={lightBlue} />
+        <div className={styles.red}>
+          <Rounded color1={red} color2={pink} size="80%" animate={false} />
+        </div>
+        <div className={styles.yellow}>
+          <Rounded color1={orange} color2={yellow} size="80%" animate={false} />
         </div>
       </div>
     </Container>

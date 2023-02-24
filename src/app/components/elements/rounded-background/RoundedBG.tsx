@@ -13,20 +13,29 @@ type Props = {
   color1?: string;
   color2?: string;
   zIndex?: number;
+  size?: string;
+  animate?: boolean;
 };
-export const Rounded = ({ data, color1, color2, zIndex }: Props) => {
+export const Rounded = ({
+  data,
+  color1,
+  color2,
+  zIndex,
+  size,
+  animate,
+}: Props) => {
   const [ref, width] = useElementWidth();
   const isMobile = useMediaQuery('(max-width: 600px)');
 
   let roundedVariants = {};
-  if (!isMobile) {
+  if (!isMobile && animate) {
     roundedVariants = {
       rotate: {
         rotate: 360,
       },
     };
   }
-  //style
+  //styles
   const background =
     color1 && color2 ? gradient(color1, color2) : gradient(yellow, orange);
   const filter =
@@ -41,10 +50,10 @@ export const Rounded = ({ data, color1, color2, zIndex }: Props) => {
 
   return (
     <motion.div
-      style={{ zIndex: zIndex || 1 }}
+      style={{ zIndex: zIndex || 1, width: size || '333px' }}
       ref={ref}
       className={styles.wrap}
-      whileHover={{ scale: 1.1 }}
+      whileHover={animate ? { scale: 1.05 } : {}}
     >
       <motion.div
         className={styles.box}
@@ -89,9 +98,7 @@ export const Rounded = ({ data, color1, color2, zIndex }: Props) => {
             );
           })}
       </motion.div>
-      <div style={{ zIndex: zIndex || 1 }} className={styles.content}>
-        <div>hello world</div>
-      </div>
+      <div style={{ zIndex: zIndex || 1 }} className={styles.content}></div>
     </motion.div>
   );
 };
