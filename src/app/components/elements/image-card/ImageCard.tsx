@@ -1,3 +1,4 @@
+import { easeIn, easeInOut, motion } from 'framer-motion';
 import React, { ReactNode } from 'react';
 import styles from './ImageCard.module.scss';
 
@@ -6,11 +7,35 @@ type ImageCard = {
   shadow?: string;
   children?: any;
   title: string;
+  delay?: number;
 };
-export const ImageCard = ({ bg, shadow, children, title }: ImageCard) => {
+export const ImageCard = ({
+  bg,
+  shadow,
+  children,
+  title,
+  delay,
+}: ImageCard) => {
   return (
-    <div
+    <motion.div
       className={styles.wrap}
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+        transition: { delay: delay },
+      }}
+      transition={{
+        type: easeIn,
+      }}
+      whileHover={{
+        scale: 1.1,
+        transition: {
+          delay: 0,
+          duration: 0.1,
+        },
+      }}
       style={{
         background: bg || 'transparent',
         padding: '16px',
@@ -24,6 +49,6 @@ export const ImageCard = ({ bg, shadow, children, title }: ImageCard) => {
       <div style={{ width: '40px', margin: '0 auto', padding: '10px' }}>
         {children}
       </div>
-    </div>
+    </motion.div>
   );
 };

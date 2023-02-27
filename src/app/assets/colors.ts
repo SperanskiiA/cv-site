@@ -9,3 +9,4 @@ export const red = '#f81225';
 export const gradient = (color1: string, color2: string) => {
   return `linear-gradient(75deg, ${color1}, ${color2})`;
 };
+export const textShadow = `1px 1px 3px ${orange}`;

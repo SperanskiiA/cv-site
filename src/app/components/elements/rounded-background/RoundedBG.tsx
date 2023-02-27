@@ -1,6 +1,6 @@
 import { useElementWidth } from '../../../hooks';
 
-import { motion } from 'framer-motion';
+import { easeIn, motion } from 'framer-motion';
 import styles from './RoundedBG.module.scss';
 import { Container } from '../container/Container';
 import { useMediaQuery } from '@mui/material';
@@ -26,6 +26,7 @@ export const Rounded = ({
 }: Props) => {
   const [ref, width] = useElementWidth();
   const isMobile = useMediaQuery('(max-width: 600px)');
+  const smallScreen = useMediaQuery('(max-width: 450px)');
 
   let roundedVariants = {};
   if (!isMobile && animate) {
@@ -47,13 +48,23 @@ export const Rounded = ({
       ? `drop-shadow(1px 1px 1px ${color2})`
       : `drop-shadow(1px 1px 1px ${orange})`;
   const iconColor = color1 && color2 ? color1 : yellow;
+  const elWidth = smallScreen ? '291px' : '333px';
 
   return (
     <motion.div
-      style={{ zIndex: zIndex || 1, width: size || '333px' }}
+      style={{ zIndex: zIndex || 1, width: size || elWidth }}
       ref={ref}
       className={styles.wrap}
-      whileHover={animate ? { scale: 1.05 } : {}}
+      whileHover={{
+        rotate: 360,
+        transition: {
+          duration: 5,
+          type: easeIn,
+          repeatType: 'reverse',
+          repeat: Infinity,
+          repeatDelay: 1,
+        },
+      }}
     >
       <motion.div
         className={styles.box}
@@ -66,8 +77,8 @@ export const Rounded = ({
         animate={'rotate'}
         transition={{
           duration: 5,
-          repeat: Infinity,
-          repeatDelay: 2,
+          repeat: 0,
+          repeatDelay: 3,
         }}
         variants={roundedVariants}
       >

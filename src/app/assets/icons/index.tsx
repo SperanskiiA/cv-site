@@ -11,6 +11,8 @@ import { ReactComponent as REDUX } from './redux.svg';
 import { ReactComponent as SASS } from './sass.svg';
 import { ReactComponent as Reactrouter } from './reactrouter.svg';
 import { ReactComponent as TS } from './typescript.svg';
+import { ReactComponent as HandFront } from './hand-front-icon.svg';
+import { ReactComponent as HandIcon } from './hand-icon.svg';
 
 export {
   CSS,
@@ -26,4 +28,6 @@ export {
   SASS,
   Reactrouter,
   TS,
+  HandFront,
+  HandIcon,
 };

@@ -6,6 +6,9 @@ import { Home } from './app/components/screens/home/Home';
 import { Header } from './app/components/elements/header/Header';
 import { About } from './app/components/screens/about/About';
 import { Skills } from './app/components/screens/skills/Skills';
+import { Works } from './app/components/screens/works/Works';
+import { Footer } from './app/components/elements/footer/Footer';
+import { WorksCard } from './app/components/elements/works-card/WorksCard';
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
       <Home />
       <Skills />
       <About />
+      <Works />
+      <Footer />
+      <WorksCard />
     </>
   );
 }

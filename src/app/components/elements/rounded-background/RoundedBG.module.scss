@@ -5,11 +5,11 @@
   height: auto;
   position: relative;
   aspect-ratio: 1/1;
-  margin: 0 auto;
+  margin-left: auto;
 
   border-radius: 100%;
   z-index: 1;
-  @media (max-width: '600px') {
+  @media (max-width: '767px') {
     width: 60%;
     margin: 0 auto;
   }

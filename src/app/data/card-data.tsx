@@ -69,10 +69,6 @@ export const cardData: cardProps[] = [
     title: 'SCSS',
     icon: SASS,
   },
-  {
-    title: 'Routing',
-    icon: Reactrouter,
-  },
 ];
 
 export const Holder = ({ children }: any) => {

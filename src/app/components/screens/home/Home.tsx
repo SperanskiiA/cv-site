@@ -18,10 +18,14 @@ export const Home = () => {
           rowGap={4}
           direction={isMobile ? 'column-reverse' : 'row'}
         >
-          <Grid item sm={6} sx={{ paddingLeft: 0 }}>
+          <Grid item sm={6}>
             <Title />
           </Grid>
-          <Grid item sm={6} sx={{ paddingLeft: 0 }}>
+          <Grid
+            sx={{ justifyContent: 'flex-end', alignItems: 'flex-end' }}
+            item
+            sm={6}
+          >
             <Rounded data={titleData} animate={true} />
           </Grid>
         </Grid>

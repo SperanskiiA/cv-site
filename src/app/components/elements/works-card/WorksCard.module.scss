@@ -1,0 +1,29 @@
+@import '../../../assets/colors.scss';
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+
+  &_img {
+    width: 50%;
+    height: 100%;
+    min-height: 400px;
+    background-color: $pink;
+    border-radius: 16px;
+  }
+  &_content {
+    width: calc(50% - 24px);
+    text-align: center;
+    padding: 12px;
+    &_title {
+      font-size: 24px;
+      font-weight: 600;
+      padding-bottom: 8px;
+    }
+    &_desc {
+      font-size: 14px;
+    }
+  }
+}

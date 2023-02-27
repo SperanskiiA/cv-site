@@ -1,17 +1,24 @@
 import { Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import React from 'react';
+import { yellow } from '../../../assets/colors';
+
 import { Container } from '../container/Container';
+import { Image } from '../svg-img/SvgImage';
 import styles from './Header.module.scss';
 
 export const Header = () => {
   const links = ['home', 'works', 'contacts'];
   return (
     <Container>
-      <div style={{ padding: '0 10px' }}>
+      <div style={{ height: '40px', padding: '0 10px' }}>
         <Grid container spacing={2} direction="row">
           <Grid item xs={4}>
-            <div style={{ fontWeight: 800, color: '#e1ff00' }}>ICON</div>
+            <div>
+              <p style={{ margin: '0', fontWeight: '700', color: yellow }}>
+                icon
+              </p>
+            </div>
           </Grid>
           <Grid item xs={8}>
             <motion.div className={styles.flex}>

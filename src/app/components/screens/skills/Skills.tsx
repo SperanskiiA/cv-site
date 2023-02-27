@@ -4,6 +4,7 @@ import { ImageCard } from '../../elements/image-card/ImageCard';
 import { ReactComponent as Css3 } from '../../../assets/icons/css3.svg';
 import { Image } from '../../elements/svg-img/SvgImage';
 import { cardData } from '../../../data';
+import { motion } from 'framer-motion';
 
 export const Skills = () => {
   return (
@@ -11,9 +12,9 @@ export const Skills = () => {
       <div style={{ width: '80%', margin: '40px auto' }}>
         <Grid container>
           <>
-            {cardData.map((item) => (
+            {cardData.map((item, index) => (
               <Grid key={item.title} item xs={6} sm={4} lg={2}>
-                <ImageCard title={item.title}>
+                <ImageCard title={item.title} delay={(index + 1) * 0.25}>
                   <Image color="#e1ff00" size="40px">
                     <item.icon />
                   </Image>
