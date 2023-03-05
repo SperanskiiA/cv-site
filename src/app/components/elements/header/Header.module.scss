@@ -5,6 +5,7 @@
   gap: 15%;
   &_item {
     color: $yellow;
+    cursor: pointer;
   }
   &_item:hover {
     text-shadow: 1px 1px 3px #f58709;

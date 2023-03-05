@@ -6,7 +6,7 @@
   white-space: nowrap;
   transition: transform 0.3s;
   box-sizing: border-box;
-  height: 400px;
+  min-height: 400px;
   margin: 0 auto;
   width: 100%;
   background-color: transparent;
@@ -14,7 +14,7 @@
 .carousel-item {
   display: inline-flex;
   align-items: center;
-  min-height: 400px;
+  min-height: 100%;
   justify-content: center;
   background-color: transparent;
   color: #f0f5f5;

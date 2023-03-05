@@ -5,10 +5,11 @@ import { ReactComponent as Css3 } from '../../../assets/icons/css3.svg';
 import { Image } from '../../elements/svg-img/SvgImage';
 import { cardData } from '../../../data';
 import { motion } from 'framer-motion';
+import { darkGrey, gradient, grey } from '../../../assets/colors';
 
 export const Skills = () => {
   return (
-    <Container bg="#414141">
+    <Container bg={grey}>
       <div style={{ width: '80%', margin: '40px auto' }}>
         <Grid container>
           <>

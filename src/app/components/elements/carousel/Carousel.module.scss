@@ -5,7 +5,7 @@
     white-space: nowrap;
     transition: transform 0.3s;
     box-sizing: border-box;
-    height: 400px;
+    min-height: 400px;
     margin: 0 auto;
     width: 100%;
     background-color: transparent;
@@ -13,23 +13,28 @@
   &_arrow_back {
     position: absolute;
     left: 10px;
-    top: calc(50% - 20px);
+    bottom: calc(50% - 20px);
     width: 40px;
     height: 40px;
+    @media (max-width: 600px) {
+      bottom: 8px;
+    }
   }
   &_arrow_forward {
     position: absolute;
     right: 10px;
-    top: calc(50% - 20px);
+    bottom: calc(50% - 20px);
+    @media (max-width: 600px) {
+      bottom: 8px;
+    }
   }
-}
-
-.carousel-item {
-  display: inline-flex;
-  align-items: center;
-  min-height: 400px;
-  justify-content: center;
-  background-color: transparent;
-  color: #f0f5f5;
-  white-space: pre-wrap;
+  &_item {
+    display: inline-flex;
+    align-items: center;
+    min-height: 100%;
+    justify-content: center;
+    background-color: transparent;
+    color: #f0f5f5;
+    white-space: pre-wrap;
+  }
 }

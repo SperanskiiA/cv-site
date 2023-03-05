@@ -11,15 +11,28 @@ import { Footer } from './app/components/elements/footer/Footer';
 import { WorksCard } from './app/components/elements/works-card/WorksCard';
 
 function App() {
+  const about = React.useRef<HTMLDivElement | null>(null);
+  const works = React.useRef<HTMLDivElement | null>(null);
+  const contacts = React.useRef<HTMLDivElement | null>(null);
+
+  const scrollToRef = (ref: React.MutableRefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
-      <Header />
+      <Header
+        handleScroll={scrollToRef}
+        about={about}
+        works={works}
+        contacts={contacts}
+      />
+      <button onClick={() => scrollToRef(about)}></button>
       <Home />
       <Skills />
-      <About />
-      <Works />
+      <About ref={about} />
+      <Works ref={works} />
       <Footer />
-      <WorksCard />
     </>
   );
 }

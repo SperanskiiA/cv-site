@@ -7,6 +7,6 @@ export const blue = '#0674f1';
 export const pink = '#f81285';
 export const red = '#f81225';
 export const gradient = (color1: string, color2: string) => {
-  return `linear-gradient(75deg, ${color1}, ${color2})`;
+  return `linear-gradient(90deg, ${color1}, ${color2})`;
 };
 export const textShadow = `1px 1px 3px ${orange}`;

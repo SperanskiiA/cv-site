@@ -6,7 +6,17 @@ import styles from './Title.module.scss';
 
 export const Title = () => {
   return (
-    <motion.div whileHover={{ scale: 1.1 }} className={styles.wrap}>
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+        },
+      }}
+      className={styles.wrap}
+    >
       <div style={{ padding: '20px' }}>
         <Typography className={styles.text} variant="h5" fontSize="20px">
           Hi there!

@@ -1,14 +1,29 @@
 import { Grid } from '@mui/material';
 import { motion } from 'framer-motion';
-import React from 'react';
+import { abort } from 'process';
+import React, { FC } from 'react';
 import { yellow } from '../../../assets/colors';
 
 import { Container } from '../container/Container';
 import { Image } from '../svg-img/SvgImage';
 import styles from './Header.module.scss';
-
-export const Header = () => {
-  const links = ['home', 'works', 'contacts'];
+type HeaderRefLinks = {
+  handleScroll: (ref: React.MutableRefObject<HTMLDivElement | null>) => void;
+  about: React.MutableRefObject<HTMLDivElement | null>;
+  works: React.MutableRefObject<HTMLDivElement | null>;
+  contacts: React.MutableRefObject<HTMLDivElement | null>;
+};
+export const Header = ({
+  handleScroll,
+  about,
+  works,
+  contacts,
+}: HeaderRefLinks) => {
+  const links = [
+    { title: 'about', ref: about },
+    { title: 'works', ref: works },
+    { title: 'contacts', ref: contacts },
+  ];
   return (
     <Container>
       <div style={{ height: '40px', padding: '0 10px' }}>
@@ -24,11 +39,12 @@ export const Header = () => {
             <motion.div className={styles.flex}>
               {links.map((item) => (
                 <motion.a
-                  key={item}
+                  key={item.title}
                   className={styles.flex_item}
                   whileHover={{ scale: 1.2 }}
+                  onClick={() => handleScroll(item.ref)}
                 >
-                  {item}
+                  {item.title.toUpperCase()}
                 </motion.a>
               ))}
             </motion.div>

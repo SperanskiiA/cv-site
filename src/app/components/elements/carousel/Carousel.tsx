@@ -4,6 +4,7 @@ import { IconButton, Button } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import './Carousel.css';
+import styles from './Carousel.module.scss';
 import { yellow } from '../../../assets/colors';
 
 interface CarouselItemProps {
@@ -15,7 +16,7 @@ export const CarouselItem: FunctionComponent<CarouselItemProps> = ({
   width,
 }) => {
   return (
-    <div className="carousel-item" style={{ width: width }}>
+    <div className={styles.carousel_item} style={{ width: width }}>
       {children}
     </div>
   );
@@ -25,19 +26,19 @@ export const Carousel = ({ children }: { children: React.ReactNode }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(true);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!paused) {
-        updateIndex(activeIndex + 1);
-      }
-    }, 2500);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (!paused) {
+  //       updateIndex(activeIndex + 1);
+  //     }
+  //   }, 2500);
 
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  });
+  //   return () => {
+  //     if (interval) {
+  //       clearInterval(interval);
+  //     }
+  //   };
+  // });
 
   const updateIndex = (newIndex: number) => {
     if (newIndex < 0) {
@@ -55,13 +56,13 @@ export const Carousel = ({ children }: { children: React.ReactNode }) => {
   });
   return (
     <div
-      className="carousel"
+      className={styles.carousel}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       {...handlers}
     >
       <div
-        className="inner"
+        className={styles.carousel_inner}
         style={{ transform: `translate(-${activeIndex * 100}%)` }}
       >
         {React.Children.map(children, (child) => {
@@ -71,7 +72,7 @@ export const Carousel = ({ children }: { children: React.ReactNode }) => {
           return React.cloneElement(item, { width: '100%' });
         })}
       </div>
-      <div className="arrow-back">
+      <div className={styles.carousel_arrow_back}>
         <IconButton
           sx={{ padding: 0 }}
           onClick={() => {
@@ -81,7 +82,7 @@ export const Carousel = ({ children }: { children: React.ReactNode }) => {
           <ArrowBackIosNewIcon htmlColor={yellow} fontSize="large" />
         </IconButton>
       </div>
-      <div className="arrow-forward">
+      <div className={styles.carousel_arrow_forward}>
         <IconButton
           sx={{ padding: 0 }}
           onClick={() => {
@@ -91,20 +92,6 @@ export const Carousel = ({ children }: { children: React.ReactNode }) => {
           <ArrowForwardIosIcon htmlColor={yellow} fontSize="large" />
         </IconButton>
       </div>
-      {/* <div className="indicators">
-				{React.Children.map(children, (child, index) => {
-					return (
-						<Button
-							className={`${index === activeIndex ? 'active' : ''}`}
-							onClick={() => {
-								updateIndex(index)
-							}}
-						>
-							{index + 1}
-						</Button>
-					)
-				})}
-			</div> */}
     </div>
   );
 };

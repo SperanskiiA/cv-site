@@ -22,12 +22,15 @@ export const ImageCard = ({
       initial={{
         opacity: 0,
       }}
-      animate={{
-        opacity: 1,
-        transition: { delay: delay },
-      }}
       transition={{
         type: easeIn,
+      }}
+      whileInView={{
+        opacity: 1,
+        transition: {
+          delay: 0.1,
+          duration: 0.2,
+        },
       }}
       whileHover={{
         scale: 1.1,
