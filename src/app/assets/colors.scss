@@ -9,3 +9,12 @@ $pink: #f81285;
 $red: #f81225;
 
 $textShadow: 1px 1px 3px $orange;
+
+.shadow {
+  position: absolute;
+  inset: 0;
+  background-color: $yellow;
+  border-radius: 4px;
+  z-index: -1;
+  opacity: 0.8;
+}

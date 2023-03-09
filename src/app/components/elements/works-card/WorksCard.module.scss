@@ -17,6 +17,12 @@
     max-height: 600px;
     display: flex;
     justify-content: center;
+    position: relative;
+    &:hover {
+      .buttons {
+        opacity: 1;
+      }
+    }
 
     img {
       margin: 0 auto;
@@ -51,15 +57,28 @@
     &_img {
       width: 100%;
       margin: 0 auto;
-      max-height: fit-content;
-      max-width: fit-content;
+      max-height: 480px;
+      max-width: 340.5px;
       min-height: 200px;
       padding: 4px;
     }
     &_content {
       width: 100%;
       margin: 0 auto;
-      padding: 0;
+      padding: 0 10px;
+
+      > p {
+        margin: 0;
+      }
     }
   }
+}
+.buttons {
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  bottom: 15px;
+  right: 10px;
+  transition: all 0.15s ease-in-out;
+  opacity: 0;
 }

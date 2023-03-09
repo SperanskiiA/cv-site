@@ -1,6 +1,6 @@
 import { useElementWidth } from '../../../hooks';
 
-import { easeIn, motion } from 'framer-motion';
+import { easeIn, easeInOut, motion, Variant, Variants } from 'framer-motion';
 import styles from './RoundedBG.module.scss';
 import { Container } from '../container/Container';
 import { useMediaQuery } from '@mui/material';
@@ -15,14 +15,18 @@ type Props = {
   zIndex?: number;
   size?: string;
   animate?: boolean;
+
+  variants?: any;
 };
 export const Rounded = ({
   data,
   color1,
   color2,
   zIndex,
-  size,
+
   animate,
+
+  variants,
 }: Props) => {
   const [ref, width] = useElementWidth();
   const isMobile = useMediaQuery('(max-width: 600px)');
@@ -36,6 +40,7 @@ export const Rounded = ({
       },
     };
   }
+
   //styles
   const background =
     color1 && color2 ? gradient(color1, color2) : gradient(yellow, orange);
@@ -52,19 +57,9 @@ export const Rounded = ({
 
   return (
     <motion.div
-      style={{ zIndex: zIndex || 1, width: size || elWidth }}
+      style={{ zIndex: zIndex || 1 }}
       ref={ref}
       className={styles.wrap}
-      whileHover={{
-        rotate: 360,
-        transition: {
-          duration: 5,
-          type: easeIn,
-          repeatType: 'reverse',
-          repeat: Infinity,
-          repeatDelay: 1,
-        },
-      }}
     >
       <motion.div
         className={styles.box}
@@ -73,7 +68,6 @@ export const Rounded = ({
           filter: filter,
           zIndex: zIndex || 1,
         }}
-        initial={{}}
         animate={'rotate'}
         transition={{
           duration: 5,
@@ -109,6 +103,7 @@ export const Rounded = ({
             );
           })}
       </motion.div>
+
       <div style={{ zIndex: zIndex || 1 }} className={styles.content}></div>
     </motion.div>
   );

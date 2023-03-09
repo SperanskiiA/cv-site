@@ -1,19 +1,32 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Icon, IconButton, Typography } from '@mui/material';
 import { Box, StyledEngineProvider } from '@mui/system';
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from '../container/Container';
 import styles from './WorksCard.module.scss';
 import img from '../../../assets/images/blog-mobile.jpg';
-// import img from '../../../assets/images/photo_2023-02-27_19-51-20.jpg';
+import InstallDesktopIcon from '@mui/icons-material/InstallDesktop';
+import InstallMobileIcon from '@mui/icons-material/InstallMobile';
+import { blue, yellow } from '../../../assets/colors';
 
 export const WorksCard = () => {
+  const [visible, setVisible] = useState(false);
+  const [layout, setLayout] = useState('mobile');
+
   return (
     <Container>
       <StyledEngineProvider injectFirst>
-        <div style={{ padding: '24px' }}>
+        <div style={{ padding: '24px', maxHeight: 'calc(100vh - 48px)' }}>
           <Box className={styles.flex}>
             <Box className={styles.flex_img}>
               <img src={img} />
+              {/* <div className={styles.buttons}>
+                <IconButton>
+                  <InstallDesktopIcon htmlColor={blue} fontSize="large" />
+                </IconButton>
+                <IconButton>
+                  <InstallMobileIcon htmlColor={blue} fontSize="large" />
+                </IconButton>
+              </div> */}
             </Box>
             <Box className={styles.flex_content}>
               <Typography className={styles.flex_content_title} variant="h4">

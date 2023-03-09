@@ -1,0 +1,57 @@
+@import '../../../assets/colors.scss';
+.box {
+  position: relative;
+  width: 85%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: auto;
+  min-width: 250px;
+  padding: 20px 0;
+  //   &:hover {
+  //     .img > img {
+  //       transition-delay: 2s;
+  //       filter: drop-shadow(-2px 2px 4px $blue);
+  //     }
+  //   }
+  @media (max-width: 767px) {
+    width: 75%;
+  }
+}
+.img {
+  position: absolute;
+  bottom: -5%;
+  left: 10%;
+  width: 80%;
+  z-index: 4;
+  > img {
+    z-index: 5;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+.span {
+  display: block;
+  z-index: -1;
+  position: absolute;
+  background-color: $blue;
+  bottom: -7.5%;
+  height: 20%;
+  width: 85%;
+  left: 20%;
+  min-width: 160px;
+  opacity: 0.8;
+  border-radius: 4px;
+  &_pink {
+    opacity: 0.8;
+    border-radius: 4px;
+    z-index: -1;
+    width: 40%;
+    left: -10%;
+    bottom: -4%;
+    background-color: $pink;
+    height: 30%;
+    display: block;
+    position: inherit;
+  }
+}

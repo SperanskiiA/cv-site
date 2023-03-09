@@ -1,11 +1,11 @@
 @import '../../../assets/colors.scss';
-.flex {
+.box {
+  margin: 30px auto;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   list-style: none;
-  gap: 1rem;
-  margin: 0;
-
   > li {
     text-decoration: none;
     position: relative;
@@ -22,4 +22,17 @@
       outline: none;
     }
   }
+}
+.button {
+  width: 40px;
+  height: 40px;
+  > a {
+    width: 35px;
+    height: 35px;
+    text-decoration: none;
+  }
+}
+.icon {
+  width: 35px;
+  height: 35px;
 }

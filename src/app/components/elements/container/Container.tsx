@@ -10,7 +10,7 @@ export const Container = ({ children, bg }: ContainerProps) => {
   const padding = mobile ? '24px 6px' : '24px';
   return (
     <div style={{ background: bg || 'transparent', boxSizing: 'border-box' }}>
-      <div style={{ maxWidth: '1240px', margin: '0 auto', padding: padding }}>
+      <div style={{ maxWidth: '1080px', margin: '0 auto', padding: padding }}>
         {children}
       </div>
     </div>

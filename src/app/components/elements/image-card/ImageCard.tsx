@@ -21,14 +21,16 @@ export const ImageCard = ({
       className={styles.wrap}
       initial={{
         opacity: 0,
+        x: -30,
       }}
       transition={{
         type: easeIn,
       }}
       whileInView={{
         opacity: 1,
+        x: 0,
         transition: {
-          delay: 0.1,
+          delay: delay,
           duration: 0.2,
         },
       }}

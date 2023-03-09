@@ -27,7 +27,7 @@ function App() {
         works={works}
         contacts={contacts}
       />
-      <button onClick={() => scrollToRef(about)}></button>
+
       <Home />
       <Skills />
       <About ref={about} />
