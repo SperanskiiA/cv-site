@@ -1,6 +1,31 @@
+@import '../../../assets/colors.scss';
+.outer {
+  position: relative;
+
+  &_arrow_back {
+    position: absolute;
+    left: -10%;
+    bottom: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  &_arrow_forward {
+    position: absolute;
+    right: -10%;
+    bottom: calc(50% - 20px);
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
 .carousel {
   overflow: hidden;
-  position: relative;
+
   &_inner {
     white-space: nowrap;
     transition: transform 0.3s;
@@ -10,26 +35,7 @@
     width: 100%;
     background-color: transparent;
   }
-  &_arrow_back {
-    position: absolute;
-    left: 10px;
-    bottom: calc(50% - 20px);
-    width: 40px;
-    height: 40px;
-    @media (max-width: 600px) {
-      bottom: 8px;
-      left: 4px;
-    }
-  }
-  &_arrow_forward {
-    position: absolute;
-    right: 10px;
-    bottom: calc(50% - 20px);
-    @media (max-width: 600px) {
-      bottom: 8px;
-      right: 4px;
-    }
-  }
+
   &_item {
     display: inline-flex;
     align-items: center;
@@ -38,5 +44,13 @@
     background-color: transparent;
     color: #f0f5f5;
     white-space: pre-wrap;
+  }
+}
+.icon {
+  color: $white;
+  &:hover {
+    color: $yellow;
+    scale: 1.1;
+    transition: 0.2s ease-in;
   }
 }

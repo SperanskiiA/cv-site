@@ -1,5 +1,6 @@
 import { easeIn, easeInOut, motion } from 'framer-motion';
 import React, { ReactNode } from 'react';
+import { yellow } from '../../../assets/colors';
 import styles from './ImageCard.module.scss';
 
 type ImageCard = {
@@ -36,6 +37,7 @@ export const ImageCard = ({
       }}
       whileHover={{
         scale: 1.1,
+        color: yellow,
         transition: {
           delay: 0,
           duration: 0.1,

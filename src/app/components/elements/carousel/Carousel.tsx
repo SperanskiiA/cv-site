@@ -26,19 +26,19 @@ export const Carousel = ({ children }: { children: React.ReactNode }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(true);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (!paused) {
-  //       updateIndex(activeIndex + 1);
-  //     }
-  //   }, 2500);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!paused) {
+        updateIndex(activeIndex + 1);
+      }
+    }, 2500);
 
-  //   return () => {
-  //     if (interval) {
-  //       clearInterval(interval);
-  //     }
-  //   };
-  // });
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  });
 
   const updateIndex = (newIndex: number) => {
     if (newIndex < 0) {
@@ -55,41 +55,43 @@ export const Carousel = ({ children }: { children: React.ReactNode }) => {
     onSwipedRight: () => updateIndex(activeIndex - 1),
   });
   return (
-    <div
-      className={styles.carousel}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      {...handlers}
-    >
+    <div className={styles.outer}>
       <div
-        className={styles.carousel_inner}
-        style={{ transform: `translate(-${activeIndex * 100}%)` }}
+        className={styles.carousel}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        {...handlers}
       >
-        {React.Children.map(children, (child) => {
-          const item = child as React.ReactElement<
-            React.PropsWithChildren<CarouselItemProps>
-          >;
-          return React.cloneElement(item, { width: '100%' });
-        })}
+        <div
+          className={styles.carousel_inner}
+          style={{ transform: `translate(-${activeIndex * 100}%)` }}
+        >
+          {React.Children.map(children, (child) => {
+            const item = child as React.ReactElement<
+              React.PropsWithChildren<CarouselItemProps>
+            >;
+            return React.cloneElement(item, { width: '100%' });
+          })}
+        </div>
       </div>
-      <div className={styles.carousel_arrow_back}>
+      <div className={styles.outer_arrow_back}>
         <IconButton
           sx={{ padding: 0 }}
           onClick={() => {
             updateIndex(activeIndex - 1);
           }}
         >
-          <ArrowBackIosNewIcon htmlColor={yellow} fontSize="large" />
+          <ArrowBackIosNewIcon className={styles.icon} fontSize="large" />
         </IconButton>
       </div>
-      <div className={styles.carousel_arrow_forward}>
+      <div className={styles.outer_arrow_forward}>
         <IconButton
           sx={{ padding: 0 }}
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
         >
-          <ArrowForwardIosIcon htmlColor={yellow} fontSize="large" />
+          <ArrowForwardIosIcon className={styles.icon} fontSize="large" />
         </IconButton>
       </div>
     </div>

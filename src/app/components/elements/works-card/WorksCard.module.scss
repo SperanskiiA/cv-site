@@ -1,28 +1,31 @@
 @import '../../../assets/colors.scss';
 
+.wrap {
+  padding: 12px;
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}
+
 .flex {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 20px;
-  max-height: 600px;
-  box-sizing: content-box;
+
+  box-sizing: border-box;
 
   &_img {
-    width: 50%;
+    width: calc(60% - 12px);
     height: 100%;
     min-height: 400px;
     padding: 12px;
     padding-right: 0;
-    max-height: 600px;
+    max-height: 640px;
     display: flex;
     justify-content: center;
     position: relative;
-    &:hover {
-      .buttons {
-        opacity: 1;
-      }
-    }
+    flex-grow: 1;
 
     img {
       margin: 0 auto;
@@ -36,36 +39,45 @@
   }
   &_content {
     width: calc(50% - 24px);
-
+    flex-shrink: 1;
     padding: 12px;
     &_title {
       font-size: 24px;
       font-weight: 600;
+      padding-bottom: 8px;
 
       text-align: center;
+      @media (max-width: 600px) {
+        font-size: 20px;
+      }
     }
     &_desc {
       font-size: 16px;
-      line-height: 1.2;
-      font-weight: 500;
+      line-height: 1;
+      font-weight: 400;
       letter-spacing: normal;
+      @media (max-width: 600px) {
+        font-size: 14px;
+      }
     }
   }
   @media (max-width: 767px) {
     flex-direction: column;
     max-height: fit-content;
+    max-width: 348.5px;
+    margin: 0 auto;
     &_img {
       width: 100%;
       margin: 0 auto;
       max-height: 480px;
       max-width: 340.5px;
       min-height: 200px;
-      padding: 4px;
+      padding: 0;
     }
     &_content {
-      width: 100%;
+      width: calc(100% - 24px);
       margin: 0 auto;
-      padding: 0 10px;
+      padding-bottom: 40px;
 
       > p {
         margin: 0;

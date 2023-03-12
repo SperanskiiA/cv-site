@@ -25,15 +25,11 @@ export const Rounded = ({
   zIndex,
 
   animate,
-
-  variants,
 }: Props) => {
   const [ref, width] = useElementWidth();
-  const isMobile = useMediaQuery('(max-width: 600px)');
-  const smallScreen = useMediaQuery('(max-width: 450px)');
 
   let roundedVariants = {};
-  if (!isMobile && animate) {
+  if (animate) {
     roundedVariants = {
       rotate: {
         rotate: 360,
@@ -53,7 +49,6 @@ export const Rounded = ({
       ? `drop-shadow(1px 1px 1px ${color2})`
       : `drop-shadow(1px 1px 1px ${orange})`;
   const iconColor = color1 && color2 ? color1 : yellow;
-  const elWidth = smallScreen ? '291px' : '333px';
 
   return (
     <motion.div

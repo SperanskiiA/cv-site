@@ -13,7 +13,15 @@ type Footer = {
 };
 
 export const footerData: Footer[] = [
-  { link: '/', alt: 'Telegram', icon: TelegramIcon },
-  { link: '/', alt: 'LinkedIn', icon: LinkedInIcon },
-  { link: '/', alt: 'Facebook', icon: FacebookIcon },
+  { link: 'https://t.me/sp_aron', alt: 'Telegram', icon: TelegramIcon },
+  {
+    link: 'https://www.linkedin.com/in/arsper/',
+    alt: 'LinkedIn',
+    icon: LinkedInIcon,
+  },
+  {
+    link: 'https://www.facebook.com/profile.php?id=100089223344214',
+    alt: 'Facebook',
+    icon: FacebookIcon,
+  },
 ];

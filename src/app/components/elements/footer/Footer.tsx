@@ -34,7 +34,7 @@ export const Footer = () => {
                     onFocus={() => setActiveIdx(index)}
                   >
                     {' '}
-                    <a href={item.link}>
+                    <a target="_blank" href={item.link}>
                       <item.icon
                         className={styles.icon}
                         htmlColor={isActive ? darkGrey : '#fff'}

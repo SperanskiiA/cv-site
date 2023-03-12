@@ -5,23 +5,40 @@
   grid-template-rows: repeat(8, 1fr);
   width: 80%;
   margin: 40px auto;
+  max-height: 100vh;
   @media (max-width: 767px) {
     width: 100%;
   }
+  @media (max-width: 850px) {
+    max-height: none;
+  }
   &_content {
-    color: $yellow;
-    text-shadow: 1px 1px 3px $orange;
+    color: $white;
+
     z-index: 1;
     grid-column: span 4/7;
     grid-row: span 6/8;
     background-color: $grey;
     padding: 20px;
     border-radius: 8px;
-
-    @media (max-width: 600px) {
+    position: relative;
+    @media (max-width: 550px) {
       grid-column: span 6/8;
       grid-row: span 6/8;
     }
+  }
+}
+.title {
+  position: absolute;
+  font-size: 24px;
+  left: 15%;
+  top: -20px;
+
+  > p {
+    font-weight: 600;
+    color: $yellow;
+
+    margin: 0;
   }
 }
 .blue {
@@ -48,5 +65,8 @@
   z-index: 0;
   @media (max-width: '600px') {
     grid-column: span 3/9;
+  }
+  @media (min-width: 850px) {
+    grid-row: span 3/9;
   }
 }

@@ -6,11 +6,8 @@
   min-width: 50px;
   width: 60%;
   margin: 15px auto;
-  color: $yellow;
+  color: $white;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  p {
-    text-shadow: $textShadow;
-  }
 }
