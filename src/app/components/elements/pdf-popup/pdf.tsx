@@ -30,6 +30,7 @@ export const Viewer = () => {
     <>
       <div className={styles.wrap}>
         <Document
+          options={{ workerSrc: 'pdf.worker.js' }}
           className={styles.pdf}
           file={resume}
           onLoadSuccess={onDocumentLoadSuccess}
