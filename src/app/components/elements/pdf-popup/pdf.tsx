@@ -33,8 +33,9 @@ export const Viewer = () => {
           className={styles.pdf}
           file={resume}
           onLoadSuccess={onDocumentLoadSuccess}
+          onLoadError={(error) => console.log('error: ' + error)}
         >
-          <Page height={isMobile ? 500 : 600} pageNumber={pageNumber} />
+          <Page height={isMobile ? 550 : 600} pageNumber={pageNumber} />
         </Document>
         <div className={styles.buttons}>
           <div className={styles.btn}>

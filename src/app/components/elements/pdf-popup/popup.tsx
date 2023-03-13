@@ -17,7 +17,10 @@ const style = {
   boxShadow: 24,
   p: 4,
   '@media (max-width: 767px)': {
-    width: '353px',
+    width: '388px',
+  },
+  '@media (max-width: 500px)': {
+    p: 0,
   },
 };
 
