@@ -1,0 +1,69 @@
+@import '../../../assets/colors.scss';
+.wrap {
+  position: relative;
+
+  max-height: fit-content;
+  &:hover {
+    .download {
+      opacity: 1;
+      transition: 0.4s ease;
+    }
+    .buttons {
+      opacity: 1;
+      transition: 0.4s ease;
+    }
+  }
+}
+.pdf {
+  margin: 0 auto;
+}
+.buttons {
+  border-radius: 12px;
+  color: $blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  width: 400px;
+  margin: 0 auto;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  opacity: 0;
+  @media (max-width: 767px) {
+    width: 329px;
+  }
+}
+.btn {
+  width: 40px;
+
+  border-radius: 12px;
+  border: 1px solid;
+  box-shadow: inset;
+  text-align: center;
+  vertical-align: middle;
+  > a {
+    cursor: pointer;
+    margin: 0;
+  }
+  > p {
+    color: $grey;
+
+    margin: 0;
+  }
+}
+.download {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px;
+  border-radius: 12px;
+  background-color: $blue;
+  color: $white;
+  opacity: 0;
+  cursor: pointer;
+  > a {
+    text-decoration: none;
+    color: $white;
+  }
+}

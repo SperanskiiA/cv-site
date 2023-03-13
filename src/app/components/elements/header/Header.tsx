@@ -26,40 +26,32 @@ export const Header: FC<HeaderRefLinks> = ({
 
   return (
     <Container>
-      <AnimateSharedLayout>
-        <nav>
-          <motion.ul
-            className={styles.flex}
-            onHoverEnd={() => setActiveIdx(null)}
-          >
-            {links.map((item, index) => {
-              const isActive = index === activeIdx;
-              return (
-                <motion.li
-                  key={item.title}
-                  onHoverStart={() => setActiveIdx(index)}
-                  onFocus={() => setActiveIdx(index)}
-                >
-                  <a
-                    tabIndex={index + 1}
-                    onClick={() => handleScroll(item.ref)}
-                  >
-                    {isActive ? (
-                      <motion.span
-                        className={styles.shadow}
-                        layoutId="shadow"
-                      />
-                    ) : null}
-                    <span style={isActive ? { color: '#000' } : undefined}>
-                      {item.title}
-                    </span>
-                  </a>
-                </motion.li>
-              );
-            })}
-          </motion.ul>
-        </nav>
-      </AnimateSharedLayout>
+      <nav>
+        <motion.ul
+          className={styles.flex}
+          onHoverEnd={() => setActiveIdx(null)}
+        >
+          {links.map((item, index) => {
+            const isActive = index === activeIdx;
+            return (
+              <motion.li
+                key={item.title}
+                onHoverStart={() => setActiveIdx(index)}
+                onFocus={() => setActiveIdx(index)}
+              >
+                <a tabIndex={index + 1} onClick={() => handleScroll(item.ref)}>
+                  {isActive ? (
+                    <motion.span className={styles.shadow} layoutId="shadow" />
+                  ) : null}
+                  <span style={isActive ? { color: '#000' } : undefined}>
+                    {item.title}
+                  </span>
+                </a>
+              </motion.li>
+            );
+          })}
+        </motion.ul>
+      </nav>
     </Container>
   );
 };

@@ -9,6 +9,8 @@ import { Skills } from './app/components/screens/skills/Skills';
 import { Works } from './app/components/screens/works/Works';
 import { Footer } from './app/components/elements/footer/Footer';
 import { WorksCard } from './app/components/elements/works-card/WorksCard';
+import { Popup } from './app/components/elements/pdf-popup/popup';
+import { PDFViewer } from '@react-pdf/renderer';
 
 function App() {
   const about = React.useRef<HTMLDivElement | null>(null);

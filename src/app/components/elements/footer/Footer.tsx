@@ -18,41 +18,39 @@ export const Footer = () => {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
   return (
     <Box position="static" sx={{ bottom: 0, width: '100%' }}>
-      <AnimateSharedLayout>
-        <StyledEngineProvider injectFirst>
-          <Box sx={{ bottom: 0, left: 0 }}>
-            <motion.ul
-              className={styles.box}
-              onHoverEnd={() => setActiveIdx(null)}
-            >
-              {footerData.map((item, index) => {
-                const isActive = index === activeIdx;
-                return (
-                  <motion.li
-                    key={item.alt}
-                    onHoverStart={() => setActiveIdx(index)}
-                    onFocus={() => setActiveIdx(index)}
-                  >
-                    {' '}
-                    <a target="_blank" href={item.link}>
-                      <item.icon
-                        className={styles.icon}
-                        htmlColor={isActive ? darkGrey : '#fff'}
+      <StyledEngineProvider injectFirst>
+        <Box sx={{ bottom: 0, left: 0 }}>
+          <motion.ul
+            className={styles.box}
+            onHoverEnd={() => setActiveIdx(null)}
+          >
+            {footerData.map((item, index) => {
+              const isActive = index === activeIdx;
+              return (
+                <motion.li
+                  key={item.alt}
+                  onHoverStart={() => setActiveIdx(index)}
+                  onFocus={() => setActiveIdx(index)}
+                >
+                  {' '}
+                  <a target="_blank" href={item.link}>
+                    <item.icon
+                      className={styles.icon}
+                      htmlColor={isActive ? darkGrey : '#fff'}
+                    />
+                    {isActive && (
+                      <motion.span
+                        layoutId="shadow"
+                        className={styles.shadow}
                       />
-                      {isActive && (
-                        <motion.span
-                          layoutId="shadow"
-                          className={styles.shadow}
-                        />
-                      )}
-                    </a>
-                  </motion.li>
-                );
-              })}
-            </motion.ul>
-          </Box>
-        </StyledEngineProvider>
-      </AnimateSharedLayout>
+                    )}
+                  </a>
+                </motion.li>
+              );
+            })}
+          </motion.ul>
+        </Box>
+      </StyledEngineProvider>
     </Box>
   );
 };

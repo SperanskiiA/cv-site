@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { pink, yellow } from '../../../assets/colors';
 import styles from './Title.module.scss';
 import resume from '../../../assets/CV_SperanskiiAron.pdf';
+import { Popup } from '../pdf-popup/popup';
 
 const contentVariants = {
   rest: {
@@ -27,7 +28,9 @@ const contentVariants = {
 };
 
 export const Title = () => {
-  // const [opened, setOpened] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   return (
@@ -50,28 +53,28 @@ export const Title = () => {
           like that I do!
         </Typography>
       </motion.div>
-      <div style={{ alignSelf: 'start', padding: '0 20px' }}>
-        <a style={{ textDecoration: 'none' }} href={resume} download>
-          <Button
-            sx={{
-              background: yellow,
-              color: '#000',
-              marginTop: '16px',
-              ':hover': {
-                color: '#fff',
-                background: pink,
-              },
-              ':focus': {
-                color: '#fff',
-                background: pink,
-              },
-            }}
-            variant="contained"
-          >
-            Get my CV
-          </Button>
-        </a>
+      <div className={styles.btn_wrap}>
+        <Button
+          sx={{
+            background: yellow,
+            color: '#000',
+            marginTop: '16px',
+            ':hover': {
+              color: '#fff',
+              background: pink,
+            },
+            ':focus': {
+              color: '#fff',
+              background: pink,
+            },
+          }}
+          variant="contained"
+          onClick={handleOpen}
+        >
+          Get my CV
+        </Button>
       </div>
+      <Popup open={open} handleClose={handleClose} />
     </motion.div>
   );
 };
