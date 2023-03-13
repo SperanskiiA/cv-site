@@ -6,6 +6,9 @@ import { useState } from 'react';
 
 import styles from './pdf.module.scss';
 import { useMediaQuery } from '@mui/material';
+import { pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 export const Viewer = () => {
   const [numPages, setNumPages] = useState<number | null>(null);
@@ -30,7 +33,6 @@ export const Viewer = () => {
     <>
       <div className={styles.wrap}>
         <Document
-          options={{ workerSrc: 'pdf.worker.js' }}
           className={styles.pdf}
           file={resume}
           onLoadSuccess={onDocumentLoadSuccess}
