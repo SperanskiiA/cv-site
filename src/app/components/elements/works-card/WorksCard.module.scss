@@ -26,6 +26,14 @@
     justify-content: center;
     position: relative;
     flex-grow: 1;
+    &:hover {
+      .backdrop {
+        opacity: 0.4;
+      }
+      .btn {
+        opacity: 1;
+      }
+    }
 
     img {
       margin: 0 auto;
@@ -85,12 +93,34 @@
     }
   }
 }
-.buttons {
-  position: absolute;
-  display: flex;
-  gap: 5px;
-  bottom: 15px;
-  right: 10px;
-  transition: all 0.15s ease-in-out;
+.btn {
+  top: calc(50% - 14.4px);
   opacity: 0;
+  position: absolute;
+  height: 28.8px;
+  padding: 4px 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  color: $yellow;
+  cursor: pointer;
+  z-index: 2;
+  border: 3px solid $yellow;
+  &:hover {
+    border: 3px solid $white;
+    color: $white;
+    background-color: $dark-grey;
+  }
+}
+.backdrop {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: $dark-grey;
+  transition: 0.3s ease-in;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }

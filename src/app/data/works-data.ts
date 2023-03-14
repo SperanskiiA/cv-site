@@ -29,15 +29,15 @@ uploading images made with Multer.
 React, as state manager here used Redux Toolkit, dezign created
 with MUI and SCSS.`,
     },
-    link: '/',
+    link: 'https://blog-client-mern.vercel.app/',
   },
-  {
-    img: blog,
-    title: 'Chess App',
-    desc: {
-      short: 'Why dont we play chess ?',
-      long: 'do u wannna play or maybe u just wanna to send me all of money that u have, huh??!',
-    },
-    link: '/',
-  },
+  // {
+  //   img: blog,
+  //   title: 'Chess App',
+  //   desc: {
+  //     short: 'Why dont we play chess ?',
+  //     long: 'do u wannna play or maybe u just wanna to send me all of money that u have, huh??!',
+  //   },
+  //   link: '/',
+  // },
 ];

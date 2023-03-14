@@ -5,8 +5,13 @@ import 'react-pdf/dist/esm/Page/TextLayer.css';
 import { useState } from 'react';
 
 import styles from './pdf.module.scss';
-import { useMediaQuery } from '@mui/material';
+import { IconButton, useMediaQuery } from '@mui/material';
 import { pdfjs } from 'react-pdf';
+import { Button } from '@mui/material';
+import { StyledEngineProvider } from '@mui/material';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { blue } from '../../../assets/colors';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -40,29 +45,43 @@ export const Viewer = () => {
         >
           <Page height={isMobile ? 550 : 600} pageNumber={pageNumber} />
         </Document>
-        <div className={styles.buttons}>
-          <div className={styles.btn}>
-            {pageNumber > 1 ? <a onClick={back}>prev</a> : <p>prev</p>}
-          </div>
-          <div>
-            <p style={{ margin: 0 }}>
-              Page {pageNumber} of {numPages}
-            </p>
-          </div>
+        <StyledEngineProvider injectFirst>
+          <div className={styles.buttons}>
+            <div className={styles.btn}>
+              <IconButton
+                disabled={pageNumber > 1 ? false : true}
+                onClick={back}
+              >
+                <ArrowBackIosNewIcon />
+              </IconButton>
+            </div>
+            <div>
+              <p style={{ margin: 0 }}>
+                Page {pageNumber} of {numPages}
+              </p>
+            </div>
 
-          <div className={styles.btn}>
-            {numPages && pageNumber < numPages ? (
-              <a onClick={forward}>next</a>
-            ) : (
-              <p>next</p>
-            )}
+            <div className={styles.btn}>
+              <IconButton
+                disabled={numPages && pageNumber < numPages ? false : true}
+                onClick={forward}
+              >
+                <ArrowForwardIosIcon />
+              </IconButton>
+            </div>
           </div>
-        </div>
-        <div className={styles.download}>
-          <a href={resume} download>
-            download
-          </a>
-        </div>
+          <div className={styles.download}>
+            <Button
+              className={styles.download_btn}
+              variant="outlined"
+              href={resume}
+              LinkComponent="a"
+              download={true}
+            >
+              download
+            </Button>
+          </div>
+        </StyledEngineProvider>
       </div>
     </>
   );

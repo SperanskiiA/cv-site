@@ -3,9 +3,8 @@ import { useSwipeable } from 'react-swipeable';
 import { IconButton, Button } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import './Carousel.css';
+
 import styles from './Carousel.module.scss';
-import { yellow } from '../../../assets/colors';
 
 interface CarouselItemProps {
   children?: React.ReactNode;

@@ -1,0 +1,17 @@
+@import '../../../assets/colors.scss';
+.item {
+  position: relative;
+  z-index: 1;
+}
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: $yellow;
+  border-radius: 8px;
+  z-index: -1;
+  opacity: 0.8;
+  left: -4%;
+
+  width: 80%;
+  height: 80%;
+}
