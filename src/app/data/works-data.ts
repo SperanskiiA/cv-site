@@ -1,12 +1,17 @@
 import blog from '../assets/images/blog-mobile.jpg';
+import emarket from '../assets/images/ecommerce-1cut.jpg';
+import emarket2 from '../assets/images/ecommerce-product1.jpg';
+import emarket3 from '../assets/images/ecommerce-cart.jpg';
 export type workDataProps = {
-  img: string;
+  img?: string;
+  imgs?: string[];
   title: string;
   desc: {
     short: string;
     long: string;
   };
   link: string;
+  tools?: string;
 };
 
 export const worksData: workDataProps[] = [
@@ -31,13 +36,13 @@ with MUI and SCSS.`,
     },
     link: 'https://blog-client-mern.vercel.app/',
   },
-  // {
-  //   img: blog,
-  //   title: 'Chess App',
-  //   desc: {
-  //     short: 'Why dont we play chess ?',
-  //     long: 'do u wannna play or maybe u just wanna to send me all of money that u have, huh??!',
-  //   },
-  //   link: '/',
-  // },
+  {
+    imgs: [emarket, emarket2, emarket3],
+    title: 'E-commerce app ',
+    desc: {
+      short: 'Sample e-commerce app on Next.js with Sanity and Stripe',
+      long: 'do u wannna play or maybe u just wanna to send me all of money that u have, huh??!',
+    },
+    link: '/https://ecomerce-sneaker-shop.vercel.app/',
+  },
 ];

@@ -1,0 +1,49 @@
+import { Grid, IconButton, Typography } from '@mui/material';
+import CallMadeIcon from '@mui/icons-material/CallMade';
+import React, { useState } from 'react';
+import styles from './Project.module.scss';
+import img from '../../../assets/images/ecommerce-1cut.jpg';
+import img2 from '../../../assets/images/ecommerce-product1.jpg';
+import img3 from '../../../assets/images/ecommerce-cart.jpg';
+
+const Project = () => {
+  const [index, setIndex] = useState(0);
+  const imgs = [img, img2, img3];
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.content}>
+        <div style={{ padding: '10px 20px' }}>
+          <Typography variant="h3">Title</Typography>
+          <Typography variant="h5">sub title</Typography>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+          }}
+        >
+          <IconButton
+            sx={{ width: '40px', height: '40px', alignSelf: 'center' }}
+          >
+            <CallMadeIcon htmlColor="#fff" fontSize="large" />
+          </IconButton>
+        </div>
+      </div>
+      <div className={styles.grid}>
+        <div className={styles.item}>
+          <img src={imgs[index]} />
+        </div>
+        <div onMouseEnter={() => setIndex(0)} className={styles.img1}>
+          <img src={imgs[0]} />
+        </div>
+        <div onMouseEnter={() => setIndex(1)} className={styles.img2}>
+          <img src={imgs[1]} />
+        </div>
+        <div onMouseEnter={() => setIndex(2)} className={styles.img3}>
+          <img src={imgs[2]} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Project;

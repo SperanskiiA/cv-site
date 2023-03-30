@@ -16,3 +16,14 @@
   font-weight: 500;
   padding: 20px 0;
 }
+.flex {
+  display: flex;
+  gap: 40px;
+  justify-content: space-evenly;
+
+  @media (max-width: 820px) {
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}

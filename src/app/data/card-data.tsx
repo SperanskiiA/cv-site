@@ -62,7 +62,7 @@ export const cardData: cardProps[] = [
     icon: Framer,
   },
   {
-    title: 'Mongo DB',
+    title: 'MongoDB',
     icon: Mongo,
   },
   {

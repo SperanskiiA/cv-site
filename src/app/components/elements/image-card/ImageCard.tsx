@@ -20,29 +20,6 @@ export const ImageCard = ({
   return (
     <motion.div
       className={styles.wrap}
-      initial={{
-        opacity: 0,
-        x: -30,
-      }}
-      transition={{
-        type: easeIn,
-      }}
-      whileInView={{
-        opacity: 1,
-        x: 0,
-        transition: {
-          delay: delay,
-          duration: 0.2,
-        },
-      }}
-      whileHover={{
-        scale: 1.1,
-        color: yellow,
-        transition: {
-          delay: 0,
-          duration: 0.1,
-        },
-      }}
       style={{
         background: bg || 'transparent',
         padding: '16px',

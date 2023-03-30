@@ -1,20 +1,63 @@
-.wrap {
-  min-height: calc(100vh - 120px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  margin: 0 auto;
+@import '../../../assets/colors.scss';
+
+// .wrap {
+//   min-height: calc(100vh - 120px);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 90%;
+//   margin: 0 auto;
+// }
+// .inner {
+//   display: flex;
+//   flex-direction: row;
+//   gap: 20px;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 20px 0;
+//   @media (max-width: 767px) {
+//     gap: 60px;
+//     flex-direction: column-reverse;
+//   }
+// }
+.container {
+  background-image: url('../../../assets/svgs/wave-yellow.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  color: white;
+  width: 100vw;
+  min-height: 100vh;
+  background-size: 140vw;
+  padding-bottom: 40px;
 }
-.inner {
+.flex {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  @media (max-width: 767px) {
-    gap: 60px;
-    flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 40px 0;
+  @media (max-width: 820px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .avatar {
+      margin: 0 auto 20px;
+      width: min(80%, 450px);
+      height: auto;
+    }
   }
+}
+.buttons {
+  width: 40%;
+  padding: 20px;
+  height: 300px;
+  display: flex;
+  > button {
+    align-self: flex-end;
+  }
+}
+.avatar {
+  width: 500px;
+  height: 400px;
+  padding: 20px;
+  margin-top: -20%;
 }

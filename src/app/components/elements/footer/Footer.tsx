@@ -1,18 +1,10 @@
-import {
-  AppBar,
-  Box,
-  IconButton,
-  StyledEngineProvider,
-  Toolbar,
-} from '@mui/material';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TelegramIcon from '@mui/icons-material/Telegram';
+import { Box, StyledEngineProvider } from '@mui/material';
+
 import { darkGrey, yellow } from '../../../assets/colors';
 import styles from './Footer.module.scss';
 import { useState } from 'react';
 import { footerData } from '../../../data';
-import { AnimateSharedLayout, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export const Footer = () => {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);

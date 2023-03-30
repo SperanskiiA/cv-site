@@ -90,7 +90,8 @@ export const Rounded = ({
                   }}
                 >
                   <item.icon
-                    style={{ color: iconColor, filter: iconFilter }}
+                    // filter: iconFilter
+                    style={{ color: iconColor }}
                     className={styles.box_item_inner_icon}
                   />
                 </div>
