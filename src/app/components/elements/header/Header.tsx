@@ -7,21 +7,21 @@ type HeaderRefLinks = {
   handleScroll: (ref: React.MutableRefObject<HTMLDivElement | null>) => void;
   about: React.MutableRefObject<HTMLDivElement | null>;
   works: React.MutableRefObject<HTMLDivElement | null>;
-  contacts: React.MutableRefObject<HTMLDivElement | null>;
+  skills: React.MutableRefObject<HTMLDivElement | null>;
 };
 
 export const Header: FC<HeaderRefLinks> = ({
   handleScroll,
   about,
   works,
-  contacts,
+  skills,
 }) => {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
   const links = [
-    { title: 'About', ref: about },
     { title: 'Works', ref: works },
-    { title: 'Contacts', ref: contacts },
+    { title: 'Skills', ref: skills },
+    { title: 'About', ref: about },
   ];
 
   return (

@@ -19,7 +19,7 @@ import SkillsLayout from './app/components/screens/skills/SkillsLayout';
 function App() {
   const about = React.useRef<HTMLDivElement | null>(null);
   const works = React.useRef<HTMLDivElement | null>(null);
-  const contacts = React.useRef<HTMLDivElement | null>(null);
+  const skills = React.useRef<HTMLDivElement | null>(null);
 
   const scrollToRef = (ref: React.MutableRefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -31,14 +31,14 @@ function App() {
         handleScroll={scrollToRef}
         about={about}
         works={works}
-        contacts={contacts}
+        skills={skills}
       />
 
       <Home />
-      <WorksLayout />
+      <WorksLayout ref={works} />
       {/* <Skills /> */}
-      <SkillsLayout />
-      <Another />
+      <SkillsLayout ref={skills} />
+      <Another ref={about} />
       {/* <About ref={about} />
       <Works ref={works} /> */}
       <Footer />

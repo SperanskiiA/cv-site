@@ -4,8 +4,9 @@ import { easeInOut, motion } from 'framer-motion';
 import ExpirienceItem from '../../elements/ExpirienceItem/ExpirienceItem';
 import { SectionLayout } from '../../layout/SectionLayout';
 import styles from './About.module.scss';
+import React from 'react';
 
-export const Another = () => {
+export const Another = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
   const educationVariants = {
     rest: {
       x: 0,
@@ -33,7 +34,7 @@ export const Another = () => {
     },
   };
   return (
-    <>
+    <div ref={ref}>
       <SectionLayout title="About Me" subTitle="hello ;)" color={newYellow}>
         <motion.div className={styles.flex}>
           <motion.div
@@ -89,9 +90,9 @@ export const Another = () => {
           </div>
         </motion.div>
       </SectionLayout>
-    </>
+    </div>
   );
-};
+});
 
 // <div
 // style={{

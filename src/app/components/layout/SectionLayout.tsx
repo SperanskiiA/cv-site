@@ -34,6 +34,20 @@ const descVariants = {
   },
   hover: {},
 };
+const childerenVariants = {
+  rest: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: 0.4,
+      duration: 0.6,
+    },
+  },
+  initial: {
+    opacity: 0,
+    scale: 0.9,
+  },
+};
 export const SectionLayout: React.FC<layout> = ({
   children,
   title,
@@ -82,18 +96,9 @@ export const SectionLayout: React.FC<layout> = ({
           )}
         </div>
         <motion.div
-          whileInView={{
-            opacity: 1,
-            scale: 1,
-            transition: {
-              delay: 0.4,
-              duration: 0.6,
-            },
-          }}
-          initial={{
-            opacity: 0,
-            scale: 0.9,
-          }}
+          whileInView="rest"
+          initial="initial"
+          variants={childerenVariants}
         >
           {children}
         </motion.div>
