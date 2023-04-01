@@ -1,16 +1,12 @@
 @import '../../../assets/colors.scss';
 .box {
   position: relative;
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
   height: auto;
   min-width: 250px;
   padding: 20px 0;
-
-  @media (max-width: 767px) {
-    width: 75%;
-  }
 }
 .img {
   position: absolute;

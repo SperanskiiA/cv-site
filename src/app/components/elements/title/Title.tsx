@@ -42,7 +42,9 @@ export const Title = () => {
         variants={contentVariants}
         className={styles.content}
       >
-        <Typography className={styles.text} variant="h5" fontSize="20px">
+        <Typography variant="h3">H1 there!!!</Typography>
+        <Typography variant="body1">jfdskjfeiufnveiufsjc</Typography>
+        {/* <Typography className={styles.text} variant="h5" fontSize="20px">
           Hi there!
         </Typography>
         <Typography className={styles.text} variant="h4" fontSize="28px">
@@ -51,7 +53,7 @@ export const Title = () => {
         <Typography className={styles.text} variant="body1" fontSize="16px">
           I'm web developer with about 1.5 years of expirience. And I really
           like that I do!
-        </Typography>
+        </Typography> */}
       </motion.div>
       <div className={styles.btn_wrap}>
         <Button

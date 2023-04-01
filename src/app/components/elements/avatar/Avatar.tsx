@@ -1,7 +1,7 @@
 import { easing } from '@mui/material';
 import { easeIn, easeInOut, easeOut, motion } from 'framer-motion';
 import React, { FC } from 'react';
-import { blue, lightBlue } from '../../../assets/colors';
+import { blue, lightBlue, newYellow } from '../../../assets/colors';
 import { titleData } from '../../../data';
 import { Rounded } from '../rounded-background/RoundedBG';
 import styles from './Avatar.module.scss';
@@ -96,8 +96,8 @@ export const Avatar: FC<AvatarProps> = ({ img }) => {
         <Rounded
           data={titleData}
           animate={true}
-          color1={blue}
-          color2={lightBlue}
+          color1="#3125de"
+          color2={newYellow}
         />
       </motion.div>
       <motion.div className={styles.img}>

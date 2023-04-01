@@ -1,12 +1,9 @@
 import { useElementWidth } from '../../../hooks';
-
-import { easeIn, easeInOut, motion, Variant, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from './RoundedBG.module.scss';
-import { Container } from '../container/Container';
-import { useMediaQuery } from '@mui/material';
+
 import { TitleProps } from '../../../data';
-import React from 'react';
-import { gradient, yellow, orange } from '../../../assets/colors';
+import { newYellow } from '../../../assets/colors';
 
 type Props = {
   data?: TitleProps[];
@@ -38,17 +35,17 @@ export const Rounded = ({
   }
 
   //styles
-  const background =
-    color1 && color2 ? gradient(color1, color2) : gradient(yellow, orange);
-  const filter =
-    color1 && color2
-      ? `drop-shadow(0px 0px 60px ${color1})`
-      : `drop-shadow(0px 0px 60px ${yellow})`;
-  const iconFilter =
-    color1 && color2
-      ? `drop-shadow(1px 1px 1px ${color2})`
-      : `drop-shadow(1px 1px 1px ${orange})`;
-  const iconColor = color1 && color2 ? color1 : yellow;
+  // const background =
+  //   color1 && color2 ? gradient(color1, color2) : gradient(yellow, orange);
+  // const filter =
+  //   color1 && color2
+  //     ? `drop-shadow(0px 0px 60px ${color1})`
+  //     : `drop-shadow(0px 0px 60px ${yellow})`;
+  // const iconFilter =
+  //   color1 && color2
+  //     ? `drop-shadow(1px 1px 1px ${color2})`
+  //     : `drop-shadow(1px 1px 1px ${orange})`;
+  // const iconColor = color1 && color2 ? color1 : yellow;
 
   return (
     <motion.div
@@ -59,8 +56,8 @@ export const Rounded = ({
       <motion.div
         className={styles.box}
         style={{
-          background: background,
-          filter: filter,
+          background: color1 || newYellow,
+          filter: 'none',
           zIndex: zIndex || 1,
         }}
         animate={'rotate'}
@@ -91,7 +88,7 @@ export const Rounded = ({
                 >
                   <item.icon
                     // filter: iconFilter
-                    style={{ color: iconColor }}
+                    style={{ color: color2 || newYellow }}
                     className={styles.box_item_inner_icon}
                   />
                 </div>

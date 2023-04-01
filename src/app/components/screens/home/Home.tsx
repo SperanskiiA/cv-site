@@ -32,9 +32,12 @@ export const Home = () => {
         desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptatibus, sequi doloribus sunt provident, ipsa asperiores veritatis nobis fugiat aut debitis harum saepe autem nulla labore alias possimus. Atque, cumque?"
       >
         <div className={styles.flex}>
-          <div className={styles.buttons}>
-            <button>button</button>
+          <div>
+            <Title />
           </div>
+          {/* <div className={styles.buttons}>
+            <button>button</button>
+          </div> */}
           <div className={styles.avatar}>
             <Avatar img={img} />
           </div>

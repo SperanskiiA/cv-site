@@ -1,23 +1,48 @@
 import { Typography } from '@mui/material';
-import {
-  darkGrey,
-  grey,
-  gradientBg,
-  yellow,
-  lightGrey,
-  newYellow,
-} from '../../../assets/colors';
-import { Container } from '../../elements';
+import { newYellow } from '../../../assets/colors';
+import { easeInOut, motion } from 'framer-motion';
 import ExpirienceItem from '../../elements/ExpirienceItem/ExpirienceItem';
 import { SectionLayout } from '../../layout/SectionLayout';
 import styles from './About.module.scss';
 
 export const Another = () => {
+  const educationVariants = {
+    rest: {
+      x: 0,
+      y: 0,
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        duration: 0.8,
+        type: easeInOut,
+      },
+    },
+    hover: {
+      scale: 1.1,
+      transition: {
+        duration: 0.6,
+        type: easeInOut,
+      },
+    },
+    initial: {
+      x: -40,
+      y: -15,
+      scale: 1.05,
+      opacity: 0,
+    },
+  };
   return (
     <>
       <SectionLayout title="About Me" subTitle="hello ;)" color={newYellow}>
-        <div className={styles.flex}>
-          <div className={styles.education}>
+        <motion.div className={styles.flex}>
+          <motion.div
+            whileInView="rest"
+            whileHover="hover"
+            initial="initial"
+            variants={educationVariants}
+            className={styles.education}
+          >
             <Typography className={styles.sub} variant="h3">
               Education
             </Typography>
@@ -31,7 +56,7 @@ export const Another = () => {
               company="Kuban state agrarian university"
               date="2014- 2018"
             />
-          </div>
+          </motion.div>
           <div className={styles.about}>
             <Typography className={styles.sub} variant="h4">
               Hello World!
@@ -62,7 +87,7 @@ export const Another = () => {
               p.s. <strong>And also I love money!</strong>
             </Typography>
           </div>
-        </div>
+        </motion.div>
       </SectionLayout>
     </>
   );

@@ -1,13 +1,14 @@
 @import '../../assets/colors.scss';
 
 .layout {
-  padding: 40px 10px;
+  padding: 40px 20px;
 }
 .content {
   max-width: 1240px;
   margin: 0 auto;
   background-color: transparent;
   height: 100%;
+  box-sizing: border-box;
 }
 .desc {
   font-size: 14px;
@@ -59,10 +60,10 @@
 }
 .subTitle {
   position: absolute;
-  font-size: 14px;
+  font-size: 16px;
   left: -40px;
   top: -20px;
   transform: rotate(-45deg);
-  font-weight: 500;
+  font-weight: 600;
   color: $blue;
 }
