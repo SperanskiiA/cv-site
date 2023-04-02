@@ -7,7 +7,9 @@ import React, { useState } from 'react';
 import { pink, yellow } from '../../../assets/colors';
 import styles from './Title.module.scss';
 import resume from '../../../assets/CV_SperanskiiAron.pdf';
+import TelegramIcon from '@mui/icons-material/Telegram';
 import { Popup } from '../pdf-popup/popup';
+import { StyledEngineProvider } from '@mui/styled-engine';
 
 const contentVariants = {
   rest: {
@@ -34,17 +36,18 @@ export const Title = () => {
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   return (
-    <motion.div className={styles.wrap}>
-      <motion.div
-        initial="rest"
-        animate="animate"
-        whileHover={isMobile ? 'animate' : 'hover'}
-        variants={contentVariants}
-        className={styles.content}
-      >
-        <Typography variant="h3">H1 there!!!</Typography>
-        <Typography variant="body1">jfdskjfeiufnveiufsjc</Typography>
-        {/* <Typography className={styles.text} variant="h5" fontSize="20px">
+    <StyledEngineProvider injectFirst>
+      <motion.div className={styles.wrap}>
+        <motion.div
+          initial="rest"
+          animate="animate"
+          whileHover={isMobile ? 'animate' : 'hover'}
+          variants={contentVariants}
+          className={styles.content}
+        >
+          <Typography variant="h3">H1 there!!!</Typography>
+          <Typography variant="body1">jfdskjfeiufnveiufsjc</Typography>
+          {/* <Typography className={styles.text} variant="h5" fontSize="20px">
           Hi there!
         </Typography>
         <Typography className={styles.text} variant="h4" fontSize="28px">
@@ -54,29 +57,25 @@ export const Title = () => {
           I'm web developer with about 1.5 years of expirience. And I really
           like that I do!
         </Typography> */}
+        </motion.div>
+        <div className={styles.btn_wrap}>
+          <Button
+            className={styles.btn_primary}
+            variant="contained"
+            endIcon={<TelegramIcon />}
+          >
+            Contact me
+          </Button>
+          <Button
+            className={styles.btn_secondary}
+            variant="outlined"
+            onClick={handleOpen}
+          >
+            Get my CV
+          </Button>
+        </div>
+        <Popup open={open} handleClose={handleClose} />
       </motion.div>
-      <div className={styles.btn_wrap}>
-        <Button
-          sx={{
-            background: yellow,
-            color: '#000',
-            marginTop: '16px',
-            ':hover': {
-              color: '#fff',
-              background: pink,
-            },
-            ':focus': {
-              color: '#fff',
-              background: pink,
-            },
-          }}
-          variant="contained"
-          onClick={handleOpen}
-        >
-          Get my CV
-        </Button>
-      </div>
-      <Popup open={open} handleClose={handleClose} />
-    </motion.div>
+    </StyledEngineProvider>
   );
 };

@@ -11,7 +11,7 @@ const SkillsLayout = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} style={{ marginTop: '-1px' }}>
       <SectionLayout
         title="Skills & Expirience"
         subTitle=""

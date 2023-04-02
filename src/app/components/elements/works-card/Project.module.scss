@@ -6,8 +6,8 @@
   @media (min-width: 1000px) {
     width: 410px;
     .grid {
-      grid-template-columns: repeat(4, 90px);
-      grid-template-rows: repeat(4, 90px);
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
     }
   }
   @media (max-width: 820px) {
@@ -24,11 +24,24 @@
   justify-content: space-evenly;
   padding: 20px;
 }
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  padding: 20px;
+  padding-top: 0;
+  > p {
+    padding: 4px;
+    margin: 0;
+  }
+}
 .grid {
-  margin: 15px;
+  margin: 15px 0;
   display: grid;
-  grid-template-columns: repeat(4, 80px);
-  grid-template-rows: repeat(4, 80px);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 .item {
   grid-column: span 3/4;
@@ -37,11 +50,12 @@
   margin: 5px;
   border-radius: 4px;
   overflow: hidden;
-  transition: 0.3s ease;
+  transition: 0.3s ease-in-out;
   &:hover {
-    // filter: drop-shadow(-1px -2px 3px $blue);
-    filter: drop-shadow(0px 0px 6px $blue);
-    scale: 1.05;
+    @media #{$mouse-device} {
+      // filter: drop-shadow(0px 0px 8px $darkBlue);
+      scale: 1.05;
+    }
   }
 
   > img {
@@ -58,8 +72,10 @@
   overflow: hidden;
   transition: 0.3s ease;
   &:hover {
-    filter: drop-shadow(0px 0px 4px $blue);
-    scale: 1.05;
+    @media #{$mouse-device} {
+      // filter: drop-shadow(0px 0px 4px $darkBlue);
+      scale: 1.1;
+    }
   }
   > img {
     width: 100%;
@@ -75,8 +91,9 @@
   overflow: hidden;
   transition: 0.3s ease;
   &:hover {
-    filter: drop-shadow(0px 0px 4px $blue);
-    scale: 1.05;
+    @media #{$mouse-device} {
+      scale: 1.1;
+    }
   }
   > img {
     width: 100%;
@@ -92,8 +109,9 @@
   overflow: hidden;
   transition: 0.3s ease;
   &:hover {
-    filter: drop-shadow(0px 0px 4px $blue);
-    scale: 1.05;
+    @media #{$mouse-device} {
+      scale: 1.1;
+    }
   }
   > img {
     width: 100%;

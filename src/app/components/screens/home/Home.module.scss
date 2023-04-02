@@ -25,12 +25,13 @@
   background-position: bottom;
   background-repeat: no-repeat;
   color: white;
-  width: 100vw;
+
   min-height: 100vh;
   background-size: 175vw;
-  padding-bottom: 40px;
+
   @media (max-width: 820px) {
     background-size: 300vw;
+    padding-bottom: 40px;
   }
 }
 .flex {

@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 export const Footer = () => {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
   return (
-    <Box position="static" sx={{ bottom: 0, width: '100%' }}>
+    <Box position="static" sx={{ bottom: 0, width: '100%', marginTop: '-1px' }}>
       <StyledEngineProvider injectFirst>
         <Box sx={{ bottom: 0, left: 0 }}>
           <motion.ul

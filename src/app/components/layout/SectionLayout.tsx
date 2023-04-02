@@ -57,7 +57,10 @@ export const SectionLayout: React.FC<layout> = ({
 }) => {
   return (
     <section
-      style={{ background: color || 'transparent', minHeight: '100vh' }}
+      style={{
+        background: color || 'transparent',
+        minHeight: '100vh',
+      }}
       className={styles.layout}
     >
       <div className={styles.content}>

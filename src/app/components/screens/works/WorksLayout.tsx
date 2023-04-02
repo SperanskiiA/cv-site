@@ -9,20 +9,20 @@ import styles from './Works.module.scss';
 const WorksLayout = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
   const isMobile = useMediaQuery('(max-width: 820px)');
   return (
-    <div ref={ref}>
-      <SectionLayout title="Recent Works" subTitle="projects" color={newYellow}>
+    <div className={styles.container} ref={ref}>
+      <SectionLayout title="Recent Works" subTitle="projects">
         <div className={styles.flex}>
-          {worksData.map((item, index) => {
+          {worksData.map(({ imgs, link, title, tools }, index) => {
             // const margin = (worksData.length - index) * 80;
             return (
               <div
                 style={
                   !isMobile
-                    ? { marginTop: `-${index * 80}px` }
+                    ? { marginTop: `-${index * 100}px` }
                     : { marginTop: '20px' }
                 }
               >
-                <Project />
+                <Project imgs={imgs} link={link} tools={tools} title={title} />
               </div>
             );
           })}

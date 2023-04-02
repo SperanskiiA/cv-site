@@ -4,19 +4,21 @@ import emarket2 from '../assets/images/ecommerce-product1.jpg';
 import emarket3 from '../assets/images/ecommerce-cart.jpg';
 export type workDataProps = {
   img?: string;
-  imgs?: string[];
+  imgs: string[];
   title: string;
-  desc: {
+  subTitle?: string;
+  desc?: {
     short: string;
     long: string;
   };
   link: string;
-  tools?: string;
+  tools?: string[];
 };
 
 export const worksData: workDataProps[] = [
   {
     img: blog,
+    imgs: [emarket, emarket2, emarket3],
     title: 'Blog app',
     desc: {
       short: ` Blog app on MERN stack.
@@ -35,14 +37,29 @@ React, as state manager here used Redux Toolkit, dezign created
 with MUI and SCSS.`,
     },
     link: 'https://blog-client-mern.vercel.app/',
+    tools: [
+      'JS',
+      'React',
+      'Redux Toolkit',
+      'Axios',
+      'MUI',
+      'SCSS',
+      'Node',
+      'Express',
+      'JWT',
+      'Versel',
+      'Railways',
+    ],
   },
   {
     imgs: [emarket, emarket2, emarket3],
-    title: 'E-commerce app ',
+    title: 'Ecommerce app ',
+
     desc: {
       short: 'Sample e-commerce app on Next.js with Sanity and Stripe',
       long: 'do u wannna play or maybe u just wanna to send me all of money that u have, huh??!',
     },
-    link: '/https://ecomerce-sneaker-shop.vercel.app/',
+    link: 'https://ecomerce-sneaker-shop.vercel.app/',
+    tools: ['JS', 'Next', 'Sanity', 'Stripe', 'Versel'],
   },
 ];

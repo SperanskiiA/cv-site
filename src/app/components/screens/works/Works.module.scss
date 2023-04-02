@@ -16,6 +16,15 @@
   font-weight: 500;
   padding: 20px 0;
 }
+.container {
+  margin-top: -1px;
+
+  background-image: url('../../../assets/svgs/wave-white.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 175vw;
+  background-color: $newYellow;
+}
 .flex {
   display: flex;
   gap: 40px;

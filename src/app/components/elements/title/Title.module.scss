@@ -56,6 +56,36 @@
     padding: 0;
   }
 }
+.btn_primary {
+  border-radius: 12px;
+  background-color: $darkBlue;
+  margin: 4px;
+  padding: 8px 12px;
+  &:hover {
+    @media #{$mouse-device} {
+      scale: 1.05;
+      transition: 0.4s ease-in-out;
+    }
+  }
+}
+.btn_secondary {
+  border-radius: 12px;
+  color: $darkBlue;
+  margin: 4px;
+  color: #fff;
+  border: 2px solid $darkBlue;
+  padding: 8px 12px;
+  @media (m) {
+  }
+  &:hover {
+    @media #{$mouse-device} {
+      scale: 1.05;
+      border: 2px solid $blue;
+      background-color: $blue;
+      transition: 0.4s ease-in-out;
+    }
+  }
+}
 .text {
   // text-shadow: $textShadow;
   font-weight: 600;

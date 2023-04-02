@@ -45,7 +45,7 @@ export const WorksCard: FC<workDataProps> = ({ img, title, desc, link }) => {
                 {title}
               </Typography>
               <p className={styles.flex_content_desc}>
-                {isMobile ? desc.short : desc.long}
+                {isMobile ? desc?.short : desc?.long}
               </p>
             </Box>
           </Box>

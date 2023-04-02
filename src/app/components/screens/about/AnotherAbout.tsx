@@ -34,8 +34,8 @@ export const Another = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
     },
   };
   return (
-    <div ref={ref}>
-      <SectionLayout title="About Me" subTitle="hello ;)" color={newYellow}>
+    <div className={styles.container} ref={ref}>
+      <SectionLayout title="About Me" subTitle="hello ;)">
         <motion.div className={styles.flex}>
           <motion.div
             whileInView="rest"

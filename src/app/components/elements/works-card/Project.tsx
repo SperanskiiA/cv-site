@@ -5,17 +5,33 @@ import styles from './Project.module.scss';
 import img from '../../../assets/images/ecommerce-1cut.jpg';
 import img2 from '../../../assets/images/ecommerce-product1.jpg';
 import img3 from '../../../assets/images/ecommerce-cart.jpg';
+import { workDataProps } from '../../../data';
 
-const Project = () => {
+type ProjectProps = {
+  title: string;
+  subTitle: string;
+  imgs: string[];
+  tools?: string;
+  link: string;
+};
+
+const Project: React.FC<workDataProps> = ({
+  title,
+  subTitle,
+  imgs,
+  tools,
+  link,
+}) => {
   const [index, setIndex] = useState(0);
-  const imgs = [img, img2, img3];
+  // const imgs = [img, img2, img3];
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <div style={{ padding: '10px 20px' }}>
-          <Typography variant="h3">Title</Typography>
+          <Typography variant="h4">{title}</Typography>
           <Typography variant="h5">sub title</Typography>
         </div>
+
         <div
           style={{
             display: 'flex',
@@ -23,10 +39,19 @@ const Project = () => {
         >
           <IconButton
             sx={{ width: '40px', height: '40px', alignSelf: 'center' }}
+            href={link}
           >
             <CallMadeIcon htmlColor="#fff" fontSize="large" />
           </IconButton>
         </div>
+      </div>
+      <div className={styles.flex}>
+        <p>
+          <b>Tools: </b>
+        </p>
+        {tools?.map((tool, index) => {
+          return <p key={index + tool}>{tool}</p>;
+        })}
       </div>
       <div className={styles.grid}>
         <div className={styles.item}>
