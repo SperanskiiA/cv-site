@@ -10,19 +10,26 @@ const WorksLayout = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
   const isMobile = useMediaQuery('(max-width: 820px)');
   return (
     <div className={styles.container} ref={ref}>
-      <SectionLayout title="Recent Works" subTitle="projects">
+      <SectionLayout title="Recent Works" subTitle={isMobile ? '' : 'projects'}>
         <div className={styles.flex}>
-          {worksData.map(({ imgs, link, title, tools }, index) => {
+          {worksData.map(({ imgs, link, title, tools, subTitle }, index) => {
             // const margin = (worksData.length - index) * 80;
             return (
               <div
+                key={title}
                 style={
                   !isMobile
                     ? { marginTop: `-${index * 100}px` }
                     : { marginTop: '20px' }
                 }
               >
-                <Project imgs={imgs} link={link} tools={tools} title={title} />
+                <Project
+                  imgs={imgs}
+                  link={link}
+                  tools={tools}
+                  title={title}
+                  subTitle={subTitle}
+                />
               </div>
             );
           })}

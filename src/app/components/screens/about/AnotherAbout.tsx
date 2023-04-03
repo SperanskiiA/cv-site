@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Typography, useMediaQuery } from '@mui/material';
 import { newYellow } from '../../../assets/colors';
 import { easeInOut, motion } from 'framer-motion';
 import ExpirienceItem from '../../elements/ExpirienceItem/ExpirienceItem';
@@ -6,40 +6,44 @@ import { SectionLayout } from '../../layout/SectionLayout';
 import styles from './About.module.scss';
 import React from 'react';
 
+const educationVariants = {
+  rest: {
+    x: 0,
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+      duration: 0.8,
+      type: easeInOut,
+    },
+  },
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.6,
+      type: easeInOut,
+    },
+  },
+
+  initial: {
+    x: -40,
+    y: -15,
+
+    opacity: 0,
+  },
+};
+
 export const Another = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
-  const educationVariants = {
-    rest: {
-      x: 0,
-      y: 0,
-      scale: 1,
-      opacity: 1,
-      transition: {
-        delay: 0.2,
-        duration: 0.8,
-        type: easeInOut,
-      },
-    },
-    hover: {
-      scale: 1.1,
-      transition: {
-        duration: 0.6,
-        type: easeInOut,
-      },
-    },
-    initial: {
-      x: -40,
-      y: -15,
-      scale: 1.05,
-      opacity: 0,
-    },
-  };
+  const mouseDevice = useMediaQuery('(hover: hover) and (pointer: fine)');
+
   return (
     <div className={styles.container} ref={ref}>
       <SectionLayout title="About Me" subTitle="hello ;)">
         <motion.div className={styles.flex}>
           <motion.div
             whileInView="rest"
-            whileHover="hover"
+            whileHover={mouseDevice ? 'hover' : ''}
             initial="initial"
             variants={educationVariants}
             className={styles.education}
@@ -55,7 +59,7 @@ export const Another = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
             <ExpirienceItem
               title="Economics, bachelor degree"
               company="Kuban state agrarian university"
-              date="2014- 2018"
+              date="09.2014- 07.2018"
             />
           </motion.div>
           <div className={styles.about}>

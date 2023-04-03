@@ -9,6 +9,8 @@ export const pink = '#f81285';
 export const red = '#f81225';
 export const newYellow = '#F7AF24';
 export const white = '#f1f2e7';
+export const darkBlue = '#3125de';
+
 export const gradient = (color1: string, color2: string) => {
   return `linear-gradient(90deg, ${color1}, ${color2})`;
 };

@@ -1,4 +1,4 @@
-import { easing } from '@mui/material';
+import { easing, useMediaQuery } from '@mui/material';
 import { easeIn, easeInOut, easeOut, motion } from 'framer-motion';
 import React, { FC } from 'react';
 import { blue, lightBlue, newYellow } from '../../../assets/colors';
@@ -22,6 +22,18 @@ const roundedVariants = {
   hover: {
     rotate: 360,
     scale: 1.05,
+    repeatType: 'mirror',
+    transition: {
+      duration: 1.5,
+      repeat: 0,
+      repeatDelay: 2,
+
+      type: easeOut,
+    },
+  },
+  inView: {
+    rotate: 360,
+    scale: 1.0,
     repeatType: 'mirror',
     transition: {
       duration: 1.5,
@@ -85,11 +97,13 @@ const blueVariants = {
 };
 
 export const Avatar: FC<AvatarProps> = ({ img }) => {
+  const mouseDevice = useMediaQuery('(hover: hover) and (pointer: fine)');
   return (
     <motion.div
       initial="rest"
-      whileHover="hover"
+      whileHover={mouseDevice ? 'hover' : ''}
       animate="rest"
+      whileInView="inView"
       className={styles.box}
     >
       <motion.div variants={roundedVariants}>

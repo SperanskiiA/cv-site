@@ -16,7 +16,7 @@ const ExpirienceItem: React.FC<ExpirienceItem> = ({ date, title, company }) => {
           <Typography className={styles.date}>{date}</Typography>
         </div>
         <div>
-          <Typography variant="h4">{title}</Typography>
+          <Typography variant="h5">{title}</Typography>
           <Typography variant="body1">{company}</Typography>
         </div>
       </div>

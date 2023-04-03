@@ -29,7 +29,8 @@ export const Home = () => {
       <SectionLayout
         title="Hello world!"
         subTitle="greetings!"
-        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptatibus, sequi doloribus sunt provident, ipsa asperiores veritatis nobis fugiat aut debitis harum saepe autem nulla labore alias possimus. Atque, cumque?"
+        desc="  I'm web developer with about 1.5 years of expirience. And I really
+        like that I do!"
       >
         <div className={styles.flex}>
           <div>

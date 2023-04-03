@@ -29,7 +29,7 @@ const Project: React.FC<workDataProps> = ({
       <div className={styles.content}>
         <div style={{ padding: '10px 20px' }}>
           <Typography variant="h4">{title}</Typography>
-          <Typography variant="h5">sub title</Typography>
+          <Typography variant="body1">{subTitle}</Typography>
         </div>
 
         <div

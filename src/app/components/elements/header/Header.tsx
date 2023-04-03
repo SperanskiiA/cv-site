@@ -2,6 +2,7 @@ import { motion, AnimateSharedLayout } from 'framer-motion';
 import React, { FC, useState } from 'react';
 import { Container } from '../container/Container';
 import styles from './Header.module.scss';
+import { darkGrey } from '../../../assets/colors';
 
 type HeaderRefLinks = {
   handleScroll: (ref: React.MutableRefObject<HTMLDivElement | null>) => void;
@@ -43,7 +44,13 @@ export const Header: FC<HeaderRefLinks> = ({
                   {isActive ? (
                     <motion.span className={styles.shadow} layoutId="shadow" />
                   ) : null}
-                  <span style={isActive ? { color: '#000' } : undefined}>
+                  <span
+                    style={
+                      isActive
+                        ? { color: darkGrey, fontWeight: 500 }
+                        : undefined
+                    }
+                  >
                     {item.title}
                   </span>
                 </a>

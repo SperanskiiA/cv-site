@@ -33,7 +33,7 @@ export const Title = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const isMobile = useMediaQuery('(max-width: 767px)');
+  const isMobile = useMediaQuery('(max-width: 820px)');
 
   return (
     <StyledEngineProvider injectFirst>
@@ -41,12 +41,17 @@ export const Title = () => {
         <motion.div
           initial="rest"
           animate="animate"
-          whileHover={isMobile ? 'animate' : 'hover'}
+          whileHover={isMobile ? '' : 'hover'}
           variants={contentVariants}
           className={styles.content}
         >
-          <Typography variant="h3">H1 there!!!</Typography>
-          <Typography variant="body1">jfdskjfeiufnveiufsjc</Typography>
+          <Typography variant="h3" style={{ padding: '8px 0' }}>
+            {' '}
+            I'm Aron Speranskii
+          </Typography>
+          <Typography variant="h5">
+            And I have an addiction... of writing code
+          </Typography>
           {/* <Typography className={styles.text} variant="h5" fontSize="20px">
           Hi there!
         </Typography>
@@ -63,6 +68,8 @@ export const Title = () => {
             className={styles.btn_primary}
             variant="contained"
             endIcon={<TelegramIcon />}
+            href="https://t.me/sp_aron"
+            target="_blank"
           >
             Contact me
           </Button>
