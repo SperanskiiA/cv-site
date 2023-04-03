@@ -1,4 +1,4 @@
-import { Grid, IconButton, Typography } from '@mui/material';
+import { Grid, IconButton, Tooltip, Typography } from '@mui/material';
 import CallMadeIcon from '@mui/icons-material/CallMade';
 import React, { useState } from 'react';
 import styles from './Project.module.scss';
@@ -6,6 +6,7 @@ import img from '../../../assets/images/ecommerce-1cut.jpg';
 import img2 from '../../../assets/images/ecommerce-product1.jpg';
 import img3 from '../../../assets/images/ecommerce-cart.jpg';
 import { workDataProps } from '../../../data';
+import { darkGrey, newYellow, white } from '../../../assets/colors';
 
 type ProjectProps = {
   title: string;
@@ -37,12 +38,23 @@ const Project: React.FC<workDataProps> = ({
             display: 'flex',
           }}
         >
-          <IconButton
-            sx={{ width: '40px', height: '40px', alignSelf: 'center' }}
-            href={link}
-          >
-            <CallMadeIcon htmlColor="#fff" fontSize="large" />
-          </IconButton>
+          <Tooltip title={`Type to visit ${title}`} placement="top">
+            <IconButton
+              sx={{
+                width: '40px',
+                height: '40px',
+                alignSelf: 'center',
+                backgroundColor: darkGrey,
+                color: newYellow,
+                '&:hover': {
+                  color: '#000',
+                },
+              }}
+              href={link}
+            >
+              <CallMadeIcon fontSize="large" />
+            </IconButton>
+          </Tooltip>
         </div>
       </div>
       <div className={styles.flex}>
