@@ -49,9 +49,9 @@
   opacity: 0;
 
   &_btn {
-    border-radius: 8px;
+    border-radius: 12px;
     border: 2px solid $blue;
-    padding: 0 4px;
+    padding: 8px 12px;
     &:hover {
       border: 2px solid $pink;
       background-color: $pink;

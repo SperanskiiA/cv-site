@@ -15,7 +15,7 @@ const style = {
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
+  p: '12px',
   '@media (max-width: 767px)': {
     width: '388px',
   },

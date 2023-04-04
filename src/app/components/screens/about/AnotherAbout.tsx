@@ -63,9 +63,7 @@ export const Another = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
             />
           </motion.div>
           <div className={styles.about}>
-            <Typography className={styles.sub} variant="h4">
-              Hello World!
-            </Typography>
+            <Typography variant="h4">Hello World!</Typography>
             <Typography variant="body1">
               Let me introduce myself once more, my name is Aron and I am a web
               developer with a year and a half of commercial experience.

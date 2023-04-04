@@ -17,7 +17,13 @@
   padding: 10px;
 }
 
+.container {
+  background-color: $white;
+  position: relative;
+}
 .content {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   @media (max-width: 820px) {
@@ -78,4 +84,13 @@
     text-align: center;
     padding: 15px;
   }
+}
+.blob {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  box-sizing: border-box;
+  z-index: 0;
 }

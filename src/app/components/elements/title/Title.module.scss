@@ -62,7 +62,7 @@
 .btn_primary {
   border-radius: 12px;
   background-color: $darkBlue;
-  margin: 4px;
+  margin: 12px;
   padding: 8px 12px;
   &:hover {
     @media #{$mouse-device} {
@@ -74,7 +74,7 @@
 .btn_secondary {
   border-radius: 12px;
   color: $darkBlue;
-  margin: 4px;
+  margin: 12px;
   color: #fff;
   border: 2px solid $darkBlue;
   padding: 8px 12px;

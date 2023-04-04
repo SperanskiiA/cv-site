@@ -7,6 +7,7 @@ import { SectionLayout } from '../../layout/SectionLayout';
 import ExpirienceItem from '../../elements/ExpirienceItem/ExpirienceItem';
 import styles from './Skills.module.scss';
 import { useMediaQuery } from '@mui/material';
+import { BgBlob } from '../../../assets/icons';
 
 const experienceVariants = {
   rest: {
@@ -34,12 +35,11 @@ const SkillsLayout = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
   return (
-    <div ref={ref} style={{ marginTop: '-1px' }}>
+    <div className={styles.container} ref={ref}>
       <SectionLayout
         title="Skills & Expirience"
         subTitle=""
         desc=" Every day I learn something new or improve my skills in technologies with which I have already worked."
-        color={white}
       >
         <div className={styles.content}>
           <motion.div
@@ -99,6 +99,9 @@ const SkillsLayout = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
           </motion.div>
         </div>
       </SectionLayout>
+      <motion.div className={styles.blob}>
+        <BgBlob />
+      </motion.div>
     </div>
   );
 });

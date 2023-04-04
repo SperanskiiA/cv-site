@@ -13,6 +13,7 @@ import { ReactComponent as Reactrouter } from './reactrouter.svg';
 import { ReactComponent as TS } from './typescript.svg';
 import { ReactComponent as HandFront } from './hand-front-icon.svg';
 import { ReactComponent as HandIcon } from './hand-icon.svg';
+import { ReactComponent as BgBlob } from '../svgs/blob.svg';
 
 export {
   CSS,
@@ -30,4 +31,5 @@ export {
   TS,
   HandFront,
   HandIcon,
+  BgBlob,
 };
