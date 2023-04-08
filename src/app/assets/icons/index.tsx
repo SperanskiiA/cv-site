@@ -14,6 +14,7 @@ import { ReactComponent as TS } from './typescript.svg';
 import { ReactComponent as HandFront } from './hand-front-icon.svg';
 import { ReactComponent as HandIcon } from './hand-icon.svg';
 import { ReactComponent as BgBlob } from '../svgs/blob.svg';
+import { ReactComponent as WaveBg } from '../svgs/grey-wawe.svg';
 
 export {
   CSS,
@@ -32,4 +33,5 @@ export {
   HandFront,
   HandIcon,
   BgBlob,
+  WaveBg,
 };

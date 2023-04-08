@@ -5,6 +5,7 @@ import ExpirienceItem from '../../elements/ExpirienceItem/ExpirienceItem';
 import { SectionLayout } from '../../layout/SectionLayout';
 import styles from './About.module.scss';
 import React from 'react';
+import { WaveBg } from '../../../assets/icons';
 
 const educationVariants = {
   rest: {
@@ -92,6 +93,7 @@ export const Another = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
           </div>
         </motion.div>
       </SectionLayout>
+      {/* <WaveBg className={styles.bg} /> */}
     </div>
   );
 });

@@ -99,9 +99,9 @@ const SkillsLayout = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
           </motion.div>
         </div>
       </SectionLayout>
-      <motion.div className={styles.blob}>
+      {/* <motion.div className={styles.blob}>
         <BgBlob />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 });

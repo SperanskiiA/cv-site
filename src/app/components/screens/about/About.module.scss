@@ -72,13 +72,12 @@
 // }
 .container {
   background-image: url('../../../assets/svgs/grey-wawe.svg');
-  background-position: bottom;
+  background-position-y: bottom;
   background-repeat: no-repeat;
-  background-size: 100vw;
+  background-size: 100%;
   box-sizing: border-box;
   max-height: fit-content;
   background-color: $newYellow;
-  border-bottom: 1px solid $dark-grey;
 }
 .flex {
   display: flex;
@@ -114,6 +113,10 @@
 
   p {
     line-height: 2;
+    > strong {
+      color: $white;
+      font-size: 20px;
+    }
   }
   > h4 {
     line-height: 2;
@@ -128,4 +131,11 @@
 .sub {
   padding: 12px;
   text-align: left;
+}
+.bg {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  bottom: -10px;
+  z-index: 0;
 }
