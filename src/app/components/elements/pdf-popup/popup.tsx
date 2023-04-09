@@ -5,22 +5,24 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { FC } from 'react';
+import { PDF } from './pdf.viewer';
 
 const style = {
   position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 424,
+  top: '10%',
+  left: '12.5%',
+
+  width: '75%',
+  height: '85%',
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: '12px',
-  '@media (max-width: 767px)': {
-    width: '388px',
-  },
-  '@media (max-width: 500px)': {
-    p: 0,
+  p: '0',
+  '@media (max-width: 820px)': {
+    width: '90%',
+    height: '90%',
+    left: '5%',
+    top: '5%',
   },
 };
 
@@ -40,7 +42,8 @@ export const Popup: FC<PopupProps> = ({ handleClose, open }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Viewer />
+          {/* <Viewer /> */}
+          <PDF />
         </Box>
       </Modal>
     </div>
