@@ -54,13 +54,17 @@ export const SectionLayout: React.FC<layout> = ({
   subTitle,
   color,
   desc,
+  open,
 }) => {
   return (
     <section
-      style={{
-        background: color || 'transparent',
-        minHeight: '100vh',
-      }}
+      style={
+        open
+          ? {
+              marginRight: '17px',
+            }
+          : { marginRight: '0px' }
+      }
       className={styles.layout}
     >
       <div className={styles.content}>

@@ -2,6 +2,14 @@
 
 .layout {
   padding: 40px 20px;
+  background-color: transparent;
+  min-height: 100vh;
+}
+.wrapper {
+  margin: 0 auto;
+}
+.main {
+  box-sizing: border-box;
 }
 .content {
   max-width: 1240px;

@@ -28,6 +28,7 @@
   max-height: fit-content;
   min-height: 100vh;
   background-size: 175vw;
+  margin-bottom: -1px;
 
   @media (max-width: 820px) {
     background-size: 300vw;

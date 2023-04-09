@@ -35,7 +35,7 @@ const educationVariants = {
   },
 };
 
-export const Another = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
+export const About = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
   const mouseDevice = useMediaQuery('(hover: hover) and (pointer: fine)');
 
   return (

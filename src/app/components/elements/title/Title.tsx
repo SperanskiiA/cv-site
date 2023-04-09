@@ -11,6 +11,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import { Popup } from '../pdf-popup/popup';
 import { useScrollbarWidth } from '../../../hooks';
 import { StyledEngineProvider } from '@mui/styled-engine';
+import { PopupProps } from '../../screens/home/Home';
 
 const contentVariants = {
   rest: {
@@ -30,27 +31,12 @@ const contentVariants = {
   },
 };
 
-export const Title = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-    const html = document.body.parentNode as HTMLElement | null;
-    html!.style.paddingRight = '17pxpx';
-  };
-  const handleClose = () => {
-    setOpen(false);
-    const html = document.body.parentNode as HTMLElement | null;
-    html!.style.paddingRight = '0px';
-  };
+export const Title: React.FC<PopupProps> = ({
+  handleClose,
+  handleOpen,
+  open,
+}) => {
   const isMobile = useMediaQuery('(max-width: 820px)');
-  const width = useScrollbarWidth();
-  const bodyWidth = open ? `calc(100% + ${width})` : '100%';
-  console.log(width);
-
-  // useEffect(() => {
-  //   document.body.style.paddingRight = open ? `-${width}px !important` : '0px';
-  //   console.log(width);
-  // }, [open]);
 
   return (
     <StyledEngineProvider injectFirst>

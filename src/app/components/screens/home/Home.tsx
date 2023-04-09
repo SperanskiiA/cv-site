@@ -10,20 +10,17 @@ import img from '../../../assets/images/portfolio-photo-title.png';
 import { Avatar } from '../../elements/avatar/Avatar';
 import { SectionLayout } from '../../layout/SectionLayout';
 
-// export const Home = () => {
-//   return (
-//     <Container bg={gradientBg('to bottom', darkGrey, grey)}>
-//       <div className={styles.wrap}>
-//         <div className={styles.inner}>
-//           <Title />
-//           <Avatar img={img} />
-//         </div>
-//       </div>
-//     </Container>
-//   );
-// };
+export type PopupProps = {
+  handleClose: () => void;
+  handleOpen: () => void;
+  open: boolean;
+};
 
-export const Home = () => {
+export const Home: React.FC<PopupProps> = ({
+  handleClose,
+  handleOpen,
+  open,
+}) => {
   return (
     <div className={styles.container}>
       <SectionLayout
@@ -31,14 +28,17 @@ export const Home = () => {
         subTitle="greetings!"
         desc="  I'm web developer with about 1.5 years of expirience. And I really
         like that I do!"
+        open={open}
       >
         <div className={styles.flex}>
           <div>
-            <Title />
+            <Title
+              handleClose={handleClose}
+              handleOpen={handleOpen}
+              open={open}
+            />
           </div>
-          {/* <div className={styles.buttons}>
-            <button>button</button>
-          </div> */}
+
           <div className={styles.avatar}>
             <Avatar img={img} />
           </div>

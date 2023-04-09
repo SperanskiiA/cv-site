@@ -5,11 +5,12 @@ import styles from './Footer.module.scss';
 import { useState } from 'react';
 import { footerData } from '../../../data';
 import { motion } from 'framer-motion';
+import { Container } from '../container/Container';
 
 export const Footer = () => {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
   return (
-    <Box position="static" sx={{ bottom: 0, width: '100%', marginTop: '-1px' }}>
+    <Container bg={darkGrey}>
       <StyledEngineProvider injectFirst>
         <Box sx={{ bottom: 0, left: 0 }}>
           <motion.ul
@@ -34,6 +35,7 @@ export const Footer = () => {
                       <motion.span
                         layoutId="shadow"
                         className={styles.shadow}
+                        style={{ zIndex: 0 }}
                       />
                     )}
                   </a>
@@ -43,7 +45,7 @@ export const Footer = () => {
           </motion.ul>
         </Box>
       </StyledEngineProvider>
-    </Box>
+    </Container>
   );
 };
 

@@ -8,15 +8,13 @@ export type layout = {
   subTitle?: string;
   color?: string;
   desc?: string;
+  open?: boolean;
 };
 
-export const Layout: React.FC<layout> = ({ children, title }) => {
+export const Layout: React.FC<layout> = ({ children, open }) => {
   return (
     <>
-      <div className={styles.layout}>
-        <div>
-          <Typography variant="h2"> {title} </Typography>
-        </div>
+      <div className={styles.wrapper}>
         <div className={styles.main}>{children}</div>
       </div>
     </>
