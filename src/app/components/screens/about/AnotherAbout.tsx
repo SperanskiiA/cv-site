@@ -5,7 +5,6 @@ import ExpirienceItem from '../../elements/ExpirienceItem/ExpirienceItem';
 import { SectionLayout } from '../../layout/SectionLayout';
 import styles from './About.module.scss';
 import React from 'react';
-import { WaveBg } from '../../../assets/icons';
 
 const educationVariants = {
   rest: {
@@ -65,7 +64,7 @@ export const About = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
           </motion.div>
           <div className={styles.about}>
             <Typography variant="h4">Hello World!</Typography>
-            <Typography variant="body1">
+            <Typography variant="body1" paragraph>
               Let me introduce myself once more, my name is Aron and I am a web
               developer with a year and a half of commercial experience.
             </Typography>
@@ -76,20 +75,22 @@ export const About = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
               <b>Firstly</b>, the web allows me to see the result of my work
               immediately.
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body1" paragraph>
               <b>Secondly</b>, each of us at least once thoughts when visited a
               certain site, "Wow, that's so cool. I wonder how it's done?",
               aren't we?
             </Typography>
-            <Typography variant="h6" style={{ padding: '12px 0' }}>
-              I decided to go further and now every day I improve my programming
-              skills to create cool interfaces so that one day someone visits my
-              site and thinks "wow, how cool is that, I want to be able to do
-              the same!".
-            </Typography>
-            <Typography variant="body1">
-              p.s. <strong>And also I love money!</strong>
-            </Typography>
+            <div className={styles.conclusion}>
+              <Typography variant="h6" style={{ padding: '8px 0' }}>
+                I decided to go further and now every day I improve my
+                programming skills to create cool interfaces so that one day
+                someone visits my site and thinks "wow, how cool is that, I want
+                to be able to do the same!".
+              </Typography>
+              <Typography variant="body1">
+                p.s. <strong>And also I love money!</strong>
+              </Typography>
+            </div>
           </div>
         </motion.div>
       </SectionLayout>

@@ -40,7 +40,13 @@ export const Header: FC<HeaderRefLinks> = ({
                 onHoverStart={() => setActiveIdx(index)}
                 onFocus={() => setActiveIdx(index)}
               >
-                <a tabIndex={index + 1} onClick={() => handleScroll(item.ref)}>
+                <a
+                  tabIndex={index + 1}
+                  onClick={() => {
+                    handleScroll(item.ref);
+                    setActiveIdx(null);
+                  }}
+                >
                   {isActive ? (
                     <motion.span className={styles.shadow} layoutId="shadow" />
                   ) : null}

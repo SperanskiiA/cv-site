@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import { easeInOut, motion } from 'framer-motion';
 import React, { useState } from 'react';
-import { blue, darkBlue, white } from '../../../assets/colors';
+import { blue, darkBlue, darkGrey, white, grey } from '../../../assets/colors';
 import { cardData } from '../../../data';
 import { SectionLayout } from '../../layout/SectionLayout';
 import ExpirienceItem from '../../elements/ExpirienceItem/ExpirienceItem';
@@ -58,7 +58,6 @@ const SkillsLayout = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
                     onTap={!mouseDevice ? () => setActiveIdx(index) : undefined}
                     className={styles.img_box}
                     key={index}
-                    style={activeIndex ? { color: darkBlue } : undefined}
                   >
                     <Typography>{item.title}</Typography>
                     {<item.icon className={styles.img} />}

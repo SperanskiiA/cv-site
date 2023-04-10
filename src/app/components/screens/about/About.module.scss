@@ -115,7 +115,7 @@
   p {
     line-height: 2;
     > strong {
-      color: $white;
+      color: $darkBlue;
       font-size: 20px;
     }
   }
@@ -139,4 +139,10 @@
   height: auto;
   bottom: -10px;
   z-index: 0;
+}
+.conclusion {
+  background-color: $white;
+  padding: 20px;
+  margin-left: -20px;
+  border-radius: 12px;
 }

@@ -64,10 +64,16 @@
   background-color: $darkBlue;
   margin: 12px;
   padding: 8px 12px;
+  vertical-align: middle;
+  font-size: 16px;
+
+  > svg {
+    font-size: 16px;
+  }
   &:hover {
     @media #{$mouse-device} {
       scale: 1.05;
-      transition: 0.4s ease-in-out;
+      transition: 0.2s ease-in-out;
     }
   }
 }
@@ -84,7 +90,7 @@
       scale: 1.05;
       border: 2px solid $blue;
       background-color: $blue;
-      transition: 0.4s ease-in-out;
+      transition: 0.2s ease-in-out;
     }
   }
 }
