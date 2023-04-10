@@ -60,7 +60,7 @@ export const Title: React.FC<PopupProps> = ({
           <Button
             className={styles.btn_primary}
             variant="contained"
-            endIcon={<TelegramIcon />}
+            endIcon={<TelegramIcon sx={{ paddingBottom: '2px' }} />}
             href="https://t.me/sp_aron"
             target="_blank"
           >
