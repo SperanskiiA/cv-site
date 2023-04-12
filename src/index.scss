@@ -1,13 +1,21 @@
 @import 'app/assets/colors.scss';
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
 
 body {
   margin: 0;
   padding: 0;
   padding-right: 0px !important;
+  min-width: 100vw;
+  min-height: 100vh;
   box-sizing: border-box;
   background: $dark-grey;
   scroll-behavior: smooth;
-
+  overflow-x: hidden;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 

@@ -1,14 +1,12 @@
-import { Grid, useMediaQuery } from '@mui/material';
 import React from 'react';
 
-import { titleData } from '../../../data';
-import { Container } from '../../elements/container/Container';
-import { Rounded } from '../../elements/rounded-background/RoundedBG';
 import { Title } from '../../elements/title/Title';
 import styles from './Home.module.scss';
 import img from '../../../assets/images/portfolio-photo-title.png';
 import { Avatar } from '../../elements/avatar/Avatar';
 import { SectionLayout } from '../../layout/SectionLayout';
+import { visibleProps } from '../works/WorksLayout';
+import { useInView } from 'react-intersection-observer';
 
 export type PopupProps = {
   handleClose: () => void;
@@ -16,13 +14,24 @@ export type PopupProps = {
   open: boolean;
 };
 
-export const Home: React.FC<PopupProps> = ({
+type homeProps = PopupProps & visibleProps;
+
+export const Home: React.FC<homeProps> = ({
   handleClose,
   handleOpen,
   open,
+  setVisible,
 }) => {
+  const { ref: observerRef, inView } = useInView({
+    threshold: 0.3,
+  });
+
+  React.useEffect(() => {
+    if (inView) setVisible(false);
+  }, [inView]);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={observerRef}>
       <SectionLayout
         title="Hello world!"
         subTitle="greetings!"

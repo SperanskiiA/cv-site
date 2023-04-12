@@ -105,6 +105,7 @@ export const SectionLayout: React.FC<layout> = ({
         <motion.div
           whileInView="rest"
           initial="initial"
+          viewport={{ amount: 0.1 }}
           variants={childerenVariants}
         >
           {children}

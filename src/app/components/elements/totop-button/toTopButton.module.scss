@@ -1,0 +1,12 @@
+@import '../../../assets/colors.scss';
+
+.visible {
+  display: block;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  color: $darkBlue;
+}
+.invisible {
+  display: none;
+}
