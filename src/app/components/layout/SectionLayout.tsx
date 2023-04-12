@@ -1,8 +1,17 @@
 import { Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import React from 'react';
-import { layout } from './Layout';
+
 import styles from './Layout.module.scss';
+
+export type layout = {
+  children: React.ReactNode;
+  title?: string;
+  subTitle?: string;
+  color?: string;
+  desc?: string;
+  open?: boolean;
+};
 
 const titleVariants = {
   initial: {

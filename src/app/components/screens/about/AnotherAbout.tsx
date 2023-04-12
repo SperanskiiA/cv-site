@@ -53,7 +53,7 @@ export const About = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
             </Typography>
             <ExpirienceItem
               title="Programing course: Java, Android, Web"
-              company="Telran"
+              company="Tel-ran"
               date="09.2019- 05.2020"
             />
             <ExpirienceItem

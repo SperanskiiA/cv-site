@@ -30,7 +30,7 @@ const experienceVariants = {
   },
 };
 
-const SkillsLayout = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
+export const Skills = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
   const mouseDevice = useMediaQuery('(hover: hover) and (pointer: fine)');
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
@@ -104,5 +104,3 @@ const SkillsLayout = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
     </div>
   );
 });
-
-export default SkillsLayout;

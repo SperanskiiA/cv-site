@@ -1,17 +1,16 @@
 import { useMediaQuery } from '@mui/material';
 import React from 'react';
-import { newYellow } from '../../../assets/colors';
+
 import { worksData } from '../../../data';
 import Project from '../../elements/works-card/Project';
 import { SectionLayout } from '../../layout/SectionLayout';
 import styles from './Works.module.scss';
 import { useInView } from 'react-intersection-observer';
-import { toTopBtnProps } from '../../elements/totop-button/toTopButton';
 
 export type visibleProps = {
   setVisible: (arg: boolean) => void;
 };
-const WorksLayout = React.forwardRef(
+export const Works = React.forwardRef(
   ({ setVisible }: visibleProps, ref: React.Ref<HTMLDivElement>) => {
     const { ref: observerRef, inView } = useInView({
       threshold: 0.5,
@@ -55,5 +54,3 @@ const WorksLayout = React.forwardRef(
     );
   }
 );
-
-export default WorksLayout;
