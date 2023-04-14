@@ -3,6 +3,7 @@
   width: 100vw;
   height: 100vh;
   color: $white;
+  overflow: hidden;
 }
 .flex {
   width: 100%;
@@ -10,4 +11,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+.lottie {
+  width: 400px;
+  height: 400px;
+  color: $newYellow;
+  @media (max-width: 500px) {
+    width: 250px;
+    height: 250px;
+  }
 }
