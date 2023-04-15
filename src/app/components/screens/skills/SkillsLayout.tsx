@@ -17,14 +17,14 @@ const experienceVariants = {
     opacity: 1,
     transition: {
       delay: 0.2,
-      duration: 0.8,
+      duration: 0.4,
       type: easeInOut,
     },
   },
   hover: {
     scale: 1.1,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       type: easeInOut,
     },
   },

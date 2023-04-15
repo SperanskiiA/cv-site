@@ -22,7 +22,7 @@ const titleVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
     },
   },
 };
@@ -37,8 +37,8 @@ const descVariants = {
     x: 0,
     y: 0,
     transition: {
-      delay: 0.4,
-      duration: 0.4,
+      delay: 0.3,
+      duration: 0.3,
     },
   },
   hover: {},
@@ -48,8 +48,8 @@ const childerenVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      delay: 0.4,
-      duration: 0.6,
+      delay: 0.3,
+      duration: 0.4,
     },
   },
   initial: {
