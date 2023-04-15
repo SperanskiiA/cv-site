@@ -1,9 +1,11 @@
-import blog from '../assets/images/blog-mobile.jpg';
 import emarket from '../assets/images/ecommerce-1cut.jpg';
 import emarket2 from '../assets/images/ecommerce-product1.jpg';
 import emarket3 from '../assets/images/ecommerce-cart.jpg';
+import blog1 from '../assets/images/main-page1.jpg';
+import blog2 from '../assets/images/fullpost-page.jpg';
+import blog3 from '../assets/images/account-page.jpg';
+
 export type workDataProps = {
-  img?: string;
   imgs: string[];
   title: string;
   subTitle?: string;
@@ -17,8 +19,7 @@ export type workDataProps = {
 
 export const worksData: workDataProps[] = [
   {
-    img: blog,
-    imgs: [emarket, emarket2, emarket3],
+    imgs: [blog1, blog2, blog3],
     title: 'Blog app',
     desc: {
       short: ` Blog app on MERN stack.

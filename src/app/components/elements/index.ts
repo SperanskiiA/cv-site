@@ -6,7 +6,7 @@ import { Header } from './header/Header';
 import { ImageCard } from './image-card/ImageCard';
 import Project from './works-card/Project';
 import { Title } from './title/Title';
-import { WorksCard } from './works-card/WorksCard';
+
 import { Popup } from './pdf-popup/popup';
 import { PDF } from './pdf-popup/pdf.viewer';
 import { Rounded } from './rounded-background/RoundedBG';
@@ -22,7 +22,6 @@ export {
   Header,
   ImageCard,
   Title,
-  WorksCard,
   Project,
   Popup,
   PDF,
