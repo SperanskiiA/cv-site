@@ -1,13 +1,12 @@
 import Typography from '@mui/material/Typography';
 import { easeInOut, motion } from 'framer-motion';
 import React, { useState } from 'react';
-import { blue, darkBlue, darkGrey, white, grey } from '../../../assets/colors';
+
 import { cardData } from '../../../data';
 import { SectionLayout } from '../../layout/SectionLayout';
 import ExpirienceItem from '../../elements/ExpirienceItem/ExpirienceItem';
 import styles from './Skills.module.scss';
 import { useMediaQuery } from '@mui/material';
-import { BgBlob } from '../../../assets/icons';
 
 const experienceVariants = {
   rest: {
@@ -86,12 +85,12 @@ export const Skills = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
               </Typography>
               <ExpirienceItem
                 title="Web Developer"
-                company="GeekDuks: Remote- Montreal, Canada"
+                company="GeekDucks: Remote- Montreal, Canada"
                 date="05.2022-02.2023"
               />
               <ExpirienceItem
                 title="Frontend Developer"
-                company="Chooselix: Remote- Montreal, Canada"
+                company="Chooslix: Remote- Montreal, Canada"
                 date="08.2019-05.2020"
               />
             </motion.div>

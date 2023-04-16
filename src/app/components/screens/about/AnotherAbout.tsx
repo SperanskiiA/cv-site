@@ -50,12 +50,12 @@ export const About = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
             </Typography>
             <ExpirienceItem
               title="Programing course: Java, Android, Web"
-              company="Tel-ran"
+              company="Tel-Ran, Educational Center"
               date="09.2019- 05.2020"
             />
             <ExpirienceItem
               title="Economics, bachelor degree"
-              company="Kuban state agrarian university"
+              company="Kuban State Agrarian University"
               date="09.2014- 07.2018"
             />
           </motion.div>

@@ -53,7 +53,7 @@
   transition: 0.3s ease-in-out;
   &:hover {
     @media #{$mouse-device} {
-      scale: 1.05;
+      scale: 1.1;
     }
   }
 

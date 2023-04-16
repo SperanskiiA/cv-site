@@ -1,7 +1,7 @@
-import { easing, useMediaQuery } from '@mui/material';
-import { easeIn, easeInOut, easeOut, motion } from 'framer-motion';
+import { useMediaQuery } from '@mui/material';
+import { easeInOut, easeOut, motion } from 'framer-motion';
 import React, { FC } from 'react';
-import { blue, lightBlue, newYellow } from '../../../assets/colors';
+import { newYellow } from '../../../assets/colors';
 import { titleData } from '../../../data';
 import { Rounded } from '../rounded-background/RoundedBG';
 import styles from './Avatar.module.scss';
@@ -36,11 +36,11 @@ const roundedVariants = {
     scale: 1.0,
     repeatType: 'mirror',
     transition: {
-      duration: 1.5,
-      repeat: 0,
-      repeatDelay: 2,
+      duration: 2,
 
-      type: easeOut,
+      delay: 0.4,
+
+      type: easeInOut,
     },
   },
 };

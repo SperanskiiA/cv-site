@@ -12,10 +12,10 @@ const ExpirienceItem: React.FC<ExpirienceItem> = ({ date, title, company }) => {
   return (
     <div className={styles.wrap}>
       <div className={styles.content}>
-        <div>
+        <div style={{ width: '25%' }}>
           <Typography className={styles.date}>{date}</Typography>
         </div>
-        <div>
+        <div style={{ width: '75%' }}>
           <Typography variant="h5">{title}</Typography>
           <Typography variant="body1">{company}</Typography>
         </div>

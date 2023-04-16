@@ -3,7 +3,7 @@ import { Carousel, CarouselItem } from './carousel/Carousel';
 import { Container } from './container/Container';
 import { Footer } from './footer/Footer';
 import { Header } from './header/Header';
-import { ImageCard } from './image-card/ImageCard';
+
 import Project from './works-card/Project';
 import { Title } from './title/Title';
 
@@ -20,7 +20,6 @@ export {
   Container,
   Footer,
   Header,
-  ImageCard,
   Title,
   Project,
   Popup,
