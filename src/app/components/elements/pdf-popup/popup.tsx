@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { Viewer } from './pdf';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+
+import ClearIcon from '@mui/icons-material/Clear';
 import Modal from '@mui/material/Modal';
 import { FC } from 'react';
 import { PDF } from './pdf.viewer';
+
+import { IconButton, useMediaQuery } from '@mui/material';
+import { blue, darkGrey, grey, white } from '../../../assets/colors';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -19,10 +20,24 @@ const style = {
   boxShadow: 24,
   p: '0',
   '@media (max-width: 820px)': {
-    width: '90%',
-    height: '90%',
-    left: '5%',
-    top: '5%',
+    width: '100%',
+    height: '100%',
+    left: '0',
+    top: '0',
+    border: 'none',
+  },
+};
+
+const btnVisible = {
+  position: 'fixed',
+  top: '60px',
+  right: '30px',
+  zIndex: 10,
+  backgroundColor: darkGrey,
+  color: white,
+  '&:hover': {
+    backgroundColor: grey,
+    color: blue,
   },
 };
 
@@ -33,6 +48,8 @@ type PopupProps = {
 };
 
 export const Popup: FC<PopupProps> = ({ handleClose, open }) => {
+  const isMobile = useMediaQuery('(max-width: 820px)');
+  const smallDevice = useMediaQuery('(max-width: 500px)');
   return (
     <div>
       <Modal
@@ -44,6 +61,11 @@ export const Popup: FC<PopupProps> = ({ handleClose, open }) => {
         <Box sx={style}>
           {/* <Viewer /> */}
           <PDF />
+          {isMobile && (
+            <IconButton sx={btnVisible} onClick={handleClose}>
+              <ClearIcon fontSize={smallDevice ? 'medium' : 'large'} />
+            </IconButton>
+          )}
         </Box>
       </Modal>
     </div>
