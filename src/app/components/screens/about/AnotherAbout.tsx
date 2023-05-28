@@ -43,6 +43,7 @@ export const About = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
             whileHover={mouseDevice ? 'hover' : ''}
             initial="initial"
             variants={educationVariants}
+            viewport={{ once: true }}
             className={styles.education}
           >
             <Typography className={styles.sub} variant="h3">

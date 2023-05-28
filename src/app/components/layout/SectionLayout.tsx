@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Typography, useMediaQuery } from '@mui/material';
 import { motion } from 'framer-motion';
 import React from 'react';
 
@@ -65,6 +65,8 @@ export const SectionLayout: React.FC<layout> = ({
   desc,
   open,
 }) => {
+  const isMobile = useMediaQuery('(max-width: 820px)');
+
   return (
     <section
       style={
@@ -88,16 +90,18 @@ export const SectionLayout: React.FC<layout> = ({
             >
               {title}
             </Typography>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: { delay: 0.4, duration: 0.2 },
-              }}
-              className={styles.subTitle}
-            >
-              {subTitle}
-            </motion.p>
+            {!isMobile && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{
+                  opacity: 1,
+                  transition: { delay: 0.4, duration: 0.2 },
+                }}
+                className={styles.subTitle}
+              >
+                {subTitle}
+              </motion.p>
+            )}
           </div>
           {desc && (
             <motion.p
@@ -114,7 +118,7 @@ export const SectionLayout: React.FC<layout> = ({
         <motion.div
           whileInView="rest"
           initial="initial"
-          viewport={{ amount: 0.1 }}
+          viewport={{ once: true }}
           variants={childerenVariants}
         >
           {children}

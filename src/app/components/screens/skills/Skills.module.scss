@@ -20,7 +20,11 @@
 .container {
   background-color: $white;
   position: relative;
-  margin-bottom: -1px;
+  margin-bottom: -3px;
+  background-image: url('../../../assets/svgs/wave (1).svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 110vw;
 }
 .content {
   position: relative;
