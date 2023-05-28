@@ -13,7 +13,7 @@ export const renderToolbar = (
         GoToPreviousPage,
         GoToNextPage,
         CurrentPageInput,
-        NumberOfPages,
+
         ZoomIn,
         ZoomOut,
       } = slots;
