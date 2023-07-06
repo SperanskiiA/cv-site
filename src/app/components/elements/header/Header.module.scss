@@ -16,6 +16,10 @@
     > a {
       cursor: pointer;
       text-decoration: none;
+      > span {
+        font-weight: 500;
+        font-size: large;
+      }
     }
   }
 }

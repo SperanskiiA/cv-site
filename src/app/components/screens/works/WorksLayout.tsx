@@ -6,6 +6,7 @@ import Project from '../../elements/works-card/Project';
 import { SectionLayout } from '../../layout/SectionLayout';
 import styles from './Works.module.scss';
 import { useInView } from 'react-intersection-observer';
+import { Carousel, CarouselItem } from '../../elements';
 
 export type visibleProps = {
   setVisible: (arg: boolean) => void;
@@ -15,6 +16,9 @@ export const Works = React.forwardRef(
     const { ref: observerRef, inView } = useInView({
       threshold: 0.5,
     });
+
+    const mobile = useMediaQuery('(max-width: 700px)');
+    const laptop = useMediaQuery('(max-width: 1050px)');
 
     React.useEffect(() => {
       if (inView) setVisible(true);
@@ -28,7 +32,33 @@ export const Works = React.forwardRef(
           subTitle={isMobile ? '' : 'projects'}
         >
           <div ref={observerRef} className={styles.flex}>
-            {worksData.map(({ imgs, link, title, tools, subTitle }, index) => {
+            <div style={{ width: '90%', margin: '-100px auto 0' }}>
+              <Carousel>
+                {worksData.map(
+                  ({ imgs, link, title, tools, subTitle }, index) => {
+                    const marginTop = mobile
+                      ? 0
+                      : laptop
+                      ? `${30 + index * -30}px`
+                      : `${index * -50}px`;
+
+                    return (
+                      <CarouselItem width={'50%'} key={title}>
+                        <Project
+                          imgs={imgs}
+                          link={link}
+                          tools={tools}
+                          title={title}
+                          subTitle={subTitle}
+                          marginTop={marginTop}
+                        />
+                      </CarouselItem>
+                    );
+                  }
+                )}
+              </Carousel>
+            </div>
+            {/* {worksData.map(({ imgs, link, title, tools, subTitle }, index) => {
               return (
                 <div
                   key={title}
@@ -47,7 +77,7 @@ export const Works = React.forwardRef(
                   />
                 </div>
               );
-            })}
+            })} */}
           </div>
         </SectionLayout>
       </div>

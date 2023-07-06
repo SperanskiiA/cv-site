@@ -14,30 +14,44 @@ import styles from './Project.module.scss';
 // import img3 from '../../../assets/images/ecommerce-cart.jpg';
 import { workDataProps } from '../../../data';
 import { darkGrey, newYellow, white } from '../../../assets/colors';
+import { easeInOut, motion } from 'framer-motion';
 
-// type ProjectProps = {
-//   title: string;
-//   subTitle: string;
-//   imgs: string[];
-//   tools?: string;
-//   link: string;
-// };
+type ProjectProps = {
+  title: string;
+  subTitle: string;
+  imgs: string[];
+  tools?: string[];
+  link: string;
+  marginTop?: string | number;
+};
 
-const Project: React.FC<workDataProps> = ({
+const Project: React.FC<ProjectProps> = ({
   title,
   subTitle,
   imgs,
   tools,
   link,
+  marginTop,
 }) => {
   const [index, setIndex] = useState(0);
   // const imgs = [img, img2, img3];
   return (
     <StyledEngineProvider injectFirst>
-      <div className={styles.wrapper}>
+      <motion.div
+        className={styles.wrapper}
+        initial={{ translateY: 0 }}
+        whileInView={{ translateY: marginTop }}
+        transition={{
+          delay: 0.4,
+          duration: 0.4,
+          type: easeInOut,
+        }}
+      >
         <div className={styles.content}>
           <div style={{ padding: '10px 20px' }}>
-            <Typography variant="h4">{title}</Typography>
+            <Typography variant="h4" sx={{ paddingBottom: '8px' }}>
+              {title}
+            </Typography>
             <Typography variant="body1">{subTitle}</Typography>
           </div>
 
@@ -88,7 +102,7 @@ const Project: React.FC<workDataProps> = ({
             <img src={imgs[2]} />
           </div>
         </div>
-      </div>
+      </motion.div>
     </StyledEngineProvider>
   );
 };

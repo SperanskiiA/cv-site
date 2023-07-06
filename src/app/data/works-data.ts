@@ -4,11 +4,14 @@ import emarket3 from '../assets/images/ecommerce-cart.jpg';
 import blog1 from '../assets/images/main-page1.jpg';
 import blog2 from '../assets/images/fullpost-page.jpg';
 import blog3 from '../assets/images/account-page.jpg';
+import prompts1 from '../assets/images/prompt-ocean-main-cut.jpg';
+import prompts2 from '../assets/images/prompt-ocean-create-prompt-cut.jpg';
+import prompts3 from '../assets/images/prompt-ocean-profile-cut.jpg';
 
 export type workDataProps = {
   imgs: string[];
   title: string;
-  subTitle?: string;
+  subTitle: string;
   desc?: {
     short: string;
     long: string;
@@ -39,7 +42,7 @@ with MUI and SCSS.`,
     },
     link: 'https://blog-client-mern.vercel.app/',
     tools: [
-      'JS',
+      'JavaScript',
       'React',
       'Redux Toolkit',
       'Axios',
@@ -55,14 +58,33 @@ with MUI and SCSS.`,
   },
   {
     imgs: [emarket, emarket2, emarket3],
-    title: 'Ecommerce app ',
+    title: 'Ecommerce',
 
     desc: {
       short: 'Sample e-commerce app on Next.js with Sanity and Stripe',
       long: 'do u wannna play or maybe u just wanna to send me all of money that u have, huh??!',
     },
     link: 'https://ecomerce-sneaker-shop.vercel.app/',
-    tools: ['JS', 'Next', 'Sanity', 'Stripe', 'Versel'],
-    subTitle: 'sample e-market on next js',
+    tools: ['JavaScript', 'Next', 'Sanity', 'Stripe', 'Versel'],
+    subTitle: 'ecommerce app on javascript and nextjs',
+  },
+  {
+    imgs: [prompts1, prompts2, prompts3],
+    title: 'Prompt Ocean',
+    desc: {
+      short: 'aksojflmaeljfsmcjmwolkcac0',
+      long: '00000000',
+    },
+    link: 'https://prompt-ocean-f08bfgltk-speranskiia.vercel.app/',
+    tools: [
+      'Typescript',
+      'Next',
+      'Next-auth',
+      'Tailwind',
+      'MongoDB',
+      'Google API',
+      'Versel',
+    ],
+    subTitle: 'prompt sharing service on typescript and next 13+',
   },
 ];

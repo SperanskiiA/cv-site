@@ -3,6 +3,10 @@
   border-top: 3px solid $white;
   width: 350px;
   margin: 10px;
+  background: #0000000f;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  backdrop-filter: blur(2px);
   @media (min-width: 1000px) {
     width: 410px;
     .grid {
@@ -51,6 +55,7 @@
   border-radius: 8px;
   overflow: hidden;
   transition: 0.3s ease-in-out;
+  aspect-ratio: 1/1;
   &:hover {
     @media #{$mouse-device} {
       scale: 1.1;
@@ -65,7 +70,7 @@
 .img1 {
   grid-column: span 1/5;
   grid-row: span 1/4;
-  background-color: $blue;
+  aspect-ratio: 1/1;
   margin: 2.5px;
   border-radius: 4px;
   overflow: hidden;
@@ -83,7 +88,7 @@
 .img2 {
   grid-column: span 1/4;
   grid-row: span 1/5;
-  background-color: $blue;
+  aspect-ratio: 1/1;
   margin: 2.5px;
   border-radius: 4px;
   overflow: hidden;
@@ -101,7 +106,7 @@
 .img3 {
   grid-column: span 1/5;
   grid-row: span 1/5;
-  background-color: $blue;
+  aspect-ratio: 1/1;
   margin: 2.5px;
   border-radius: 4px;
   overflow: hidden;

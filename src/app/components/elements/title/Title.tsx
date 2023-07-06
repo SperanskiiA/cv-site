@@ -48,7 +48,10 @@ export const Title: React.FC<PopupProps> = ({
           variants={contentVariants}
           className={styles.content}
         >
-          <Typography variant="h3" style={{ padding: '8px 0' }}>
+          <Typography
+            variant="h3"
+            style={{ padding: '8px 0', fontWeight: 800 }}
+          >
             {' '}
             I'm Aron Speranskii
           </Typography>

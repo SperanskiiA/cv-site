@@ -4,7 +4,7 @@
 
   &_arrow_back {
     position: absolute;
-    left: -10%;
+    left: -4%;
     bottom: calc(50% - 20px);
     width: 40px;
     height: 40px;
@@ -16,7 +16,7 @@
   }
   &_arrow_forward {
     position: absolute;
-    right: -10%;
+    right: -4%;
     bottom: calc(50% - 20px);
     @media (max-width: 767px) {
       display: none;
@@ -28,29 +28,31 @@
 
   &_inner {
     white-space: nowrap;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
     box-sizing: border-box;
     min-height: 400px;
-    margin: 0 auto;
+    margin: 100px auto 40px;
     width: 100%;
-    background-color: transparent;
+    background-color: transparent 0.2;
+    backdrop-filter: blur;
   }
 
   &_item {
     display: inline-flex;
+
     align-items: center;
     min-height: 100%;
     justify-content: center;
     background-color: transparent;
-    color: #f0f5f5;
+    color: #000;
     white-space: pre-wrap;
   }
 }
 .icon {
-  color: $white;
+  color: $dark-grey;
   &:hover {
-    color: $yellow;
-    scale: 1.1;
+    color: #000;
+    scale: 1.2;
     transition: 0.2s ease-in;
   }
 }

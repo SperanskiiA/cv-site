@@ -54,18 +54,17 @@ export const Skills = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
                     onHoverStart={
                       mouseDevice ? () => setActiveIdx(index) : undefined
                     }
-                    onTap={!mouseDevice ? () => setActiveIdx(index) : undefined}
                     className={styles.img_box}
                     key={index}
                   >
                     <Typography>{item.title}</Typography>
                     {<item.icon className={styles.img} />}
-                    {activeIndex && (
+                    {/* {activeIndex && (
                       <motion.span
                         className={styles.backdrop}
                         layoutId="backdrop"
                       />
-                    )}
+                    )} */}
                   </motion.div>
                 );
               })}
