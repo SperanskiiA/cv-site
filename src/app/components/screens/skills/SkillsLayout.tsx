@@ -96,9 +96,7 @@ export const Skills = React.forwardRef((_, ref: React.Ref<HTMLDivElement>) => {
           </motion.div>
         </div>
       </SectionLayout>
-      {/* <motion.div className={styles.blob}>
-        <BgBlob />
-      </motion.div> */}
+      <div className={styles.background}></div>
     </div>
   );
 });
