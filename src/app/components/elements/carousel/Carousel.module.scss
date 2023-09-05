@@ -1,58 +1,58 @@
 @import '../../../assets/colors.scss';
 .outer {
-  position: relative;
+    position: relative;
 
-  &_arrow_back {
-    position: absolute;
-    left: -4%;
-    bottom: calc(50% - 20px);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    &_arrow_back {
+        position: absolute;
+        left: -4%;
+        bottom: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
 
-    @media (max-width: 767px) {
-      display: none;
+        @media (max-width: 550px) {
+            display: none;
+        }
     }
-  }
-  &_arrow_forward {
-    position: absolute;
-    right: -4%;
-    bottom: calc(50% - 20px);
-    @media (max-width: 767px) {
-      display: none;
+    &_arrow_forward {
+        position: absolute;
+        right: -4%;
+        bottom: calc(50% - 20px);
+        @media (max-width: 550px) {
+            display: none;
+        }
     }
-  }
 }
 .carousel {
-  overflow: hidden;
+    overflow: hidden;
 
-  &_inner {
-    white-space: nowrap;
-    transition: transform 0.5s;
-    box-sizing: border-box;
-    min-height: 400px;
-    margin: 100px auto 40px;
-    width: 100%;
-    background-color: transparent 0.2;
-    backdrop-filter: blur;
-  }
+    &_inner {
+        white-space: nowrap;
+        transition: transform 0.5s;
+        box-sizing: border-box;
+        min-height: 400px;
+        margin: 100px auto 40px;
+        width: 100%;
+        background-color: transparent 0.2;
+        backdrop-filter: blur;
+    }
 
-  &_item {
-    display: inline-flex;
+    &_item {
+        display: inline-flex;
 
-    align-items: center;
-    min-height: 100%;
-    justify-content: center;
-    background-color: transparent;
-    color: #000;
-    white-space: pre-wrap;
-  }
+        align-items: center;
+        min-height: 100%;
+        justify-content: center;
+        background-color: transparent;
+        color: #000;
+        white-space: pre-wrap;
+    }
 }
 .icon {
-  color: $dark-grey;
-  &:hover {
-    color: #000;
-    scale: 1.2;
-    transition: 0.2s ease-in;
-  }
+    color: $dark-grey;
+    &:hover {
+        color: #000;
+        scale: 1.2;
+        transition: 0.2s ease-in;
+    }
 }
